@@ -1,9 +1,21 @@
+:root {
+  --header-height: 80px;
+  --opacity: 1;
+  --gray-1: #f2f2f8;
+  --gray-2: #bebec6;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
 }
 
 a {

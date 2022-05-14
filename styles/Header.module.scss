@@ -1,0 +1,120 @@
+@import "../scss-vars/main-vars.scss";
+
+.header {
+  width: 100%;
+  height: var(--header-height);
+  border-bottom: var(--gray-2) solid 2px;
+  background-color: var(--gray-1);
+}
+
+.headerContents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.sidebarToggleButton {
+  position: relative;
+  background-color: var(--gray-2);
+  cursor: pointer;
+  width: 50px;
+  height: var(--header-height);
+  transition: all 0.4s;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .sidebarToggleButtonArea {
+    position: absolute;
+    margin: auto;
+    transition: all 0.6s; /*アニメーションの設定*/
+    width: 50px;
+    height: 50px;
+  }
+  span {
+    opacity: 1;
+    display: inline-block;
+    transition: all 0.4s;
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+    width: 45%;
+    background-color: #191962;
+  }
+
+  span:nth-of-type(1) {
+    top: 15px;
+  }
+
+  span:nth-of-type(2) {
+    top: 23px;
+  }
+
+  span:nth-of-type(3) {
+    top: 31px;
+  }
+
+  /*activeクラスが付与されると .sidebarToggleButtonAreaが360度回転し、その中の線が回転して×に*/
+}
+
+.sidebarToggleButton.active {
+  background-color: var(--gray-2);
+
+  .sidebarToggleButtonArea {
+    transform: rotate(-360deg);
+  }
+
+  span {
+    background-color: #323238;
+    // background-color: #bebec7;
+  }
+
+  span:nth-of-type(1) {
+    top: 18px;
+    left: 12px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 50%;
+  }
+
+  span:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  span:nth-of-type(3) {
+    top: 30px;
+    left: 12px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 50%;
+  }
+}
+
+.headerTitle {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: 1.7rem;
+  padding: 0 20px;
+}
+
+.userIcon {
+  // width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  // border-radius: 50%;
+  // background-color: #bebec7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.4s;
+  user-select: none;
+  opacity: 0.4;
+  // flex-direction: column;
+
+  span {
+    margin-left: 5px;
+  }
+}
