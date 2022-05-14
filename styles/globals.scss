@@ -1,9 +1,28 @@
+// # vars
 :root {
   --header-height: 80px;
+  --footer-height: 100px;
   --opacity: 1;
-  --gray-1: #f2f2f8;
-  --gray-2: #bebec6;
+  --true-white: #fff;
+  --true-black: #000;
+  --light: #f8fbff;
+  --gray-1: #e4e9f8;
+  --gray-2: #cad0e6;
+  --gray-3: #acb1c9;
+  --gray-310: #979bb5;
+  --gray-320: #7f839c;
+  --gray-330: #696e84;
+  --gray-340: #50546b;
+  --gray-350: #383d50;
+  --gray-4: #282c3d;
+  --gray-5: #1c1e28;
+  --dark: #10121a;
+  --link: #09b900;
+  --link-visited: #b29700;
+  --link-hover: #0758bc;
 }
+
+// # tags
 
 html,
 body {
@@ -16,13 +35,160 @@ body {
 body {
   height: 100vh;
   width: 100vw;
+  color: var(--dark);
+  // color: var(--gray-5);
 }
 
 a {
   color: inherit;
+  color: var(--link);
   text-decoration: none;
+}
+
+a:visited {
+  color: var(--link-visited);
+}
+
+a:hover {
+  color: var(--link-hover);
 }
 
 * {
   box-sizing: border-box;
+}
+
+// # classess
+
+// ## max width and height
+
+.width-max {
+  width: 100%;
+}
+
+.height-max {
+  height: 100%;
+}
+
+.width-max-vw {
+  width: 100vw;
+}
+
+.height-max-vh {
+  height: 100vh;
+}
+
+// ## flex
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+// ## color
+
+.true-black {
+  color: var(--true-black);
+}
+
+.true-white {
+  color: var(--true-white);
+}
+
+.light {
+  color: var(--light);
+}
+
+.black {
+  color: var(--dark);
+}
+
+.gray-1 {
+  color: var(--gray-1);
+}
+
+.gray-2 {
+  color: var(--gray-2);
+}
+
+.gray-3 {
+  color: var(--gray-3);
+}
+
+.gray-4 {
+  color: var(--gray-4);
+}
+
+.gray-5 {
+  color: var(--gray-5);
+}
+
+.bg-true-black {
+  background-color: var(--true-black);
+}
+
+.bg-true-white {
+  background-color: var(--true-white);
+}
+
+.bg-light {
+  background-color: var(--light);
+}
+
+.bg-dark {
+  background-color: var(--dark);
+}
+
+.bg-gray-1 {
+  background-color: var(--gray-1);
+}
+
+.bg-gray-2 {
+  background-color: var(--gray-2);
+}
+
+.bg-gray-3 {
+  background-color: var(--gray-3);
+}
+
+.bg-gray-310 {
+  background-color: var(--gray-310);
+}
+.bg-gray-320 {
+  background-color: var(--gray-320);
+}
+.bg-gray-330 {
+  background-color: var(--gray-330);
+}
+.bg-gray-340 {
+  background-color: var(--gray-340);
+}
+.bg-gray-350 {
+  background-color: var(--gray-350);
+}
+
+.bg-gray-4 {
+  background-color: var(--gray-4);
+}
+
+.bg-gray-5 {
+  background-color: var(--gray-5);
+}
+
+// ## other
+
+.button {
+  cursor: pointer;
+  user-select: none;
 }
