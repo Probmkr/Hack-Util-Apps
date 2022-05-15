@@ -93,27 +93,43 @@
     font-family: "Courier New", Courier, monospace;
     font-weight: bold;
     font-size: 1.7rem;
-    padding: 0 20px;
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 5px;
+  }
+
+  .headerTitle:hover {
+    border: var(--theme-4) solid 2px;
   }
 
   .userIcon {
-    // width: 50px;
-    color: var(--dark);
-    height: 50px;
+    height: 38px;
+    width: 38px;
     margin-right: 20px;
-    // border-radius: 50%;
-    // background-color: #bebec7;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     transition: all 0.4s;
     user-select: none;
-    opacity: 0.4;
+    opacity: 0.5;
     // flex-direction: column;
+
+    .userIconImg {
+      width: var(--user-icon-size);
+      height: var(--user-icon-size);
+      stroke: var(--theme-reverse-1);
+      transition: stroke var(--header-transition);
+    }
 
     span {
       margin-left: 5px;
     }
+  }
+
+  .userIcon:hover {
+    border: var(--theme-reverse-1) solid 1px;
   }
 }

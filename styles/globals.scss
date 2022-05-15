@@ -3,9 +3,13 @@
   --header-transition: 0.2s;
   --body-transition: 0.4s;
   --footer-transition: 0.6s;
+  --dark-mode-button-transition: 0.2s;
   --header-height: 80px;
   --footer-height: 100px;
-  --dark-mode-button-size: 50px;
+  --dark-mode-button-size: 40px;
+  --dark-mode-button-right: 30px;
+  --dark-mode-button-bottom: 60px;
+  --user-icon-size: 36px;
   --opacity: 1;
   --true-white: #fff;
   --true-black: #000;
@@ -22,8 +26,8 @@
   --gray-5: #1c1f2b;
   --dark: #10121a;
   --link: #09b900;
-  --link-visited: #b29700;
-  --link-hover: #0758bc;
+  --link-visited: #a48b00;
+  --link-hover: #09366e;
   --theme-1: var(--true-white);
   --theme-2: var(--gray-1);
   --theme-3: var(--gray-2);
@@ -45,6 +49,8 @@
   --theme-reverse-3: var(--gray-2);
   --theme-reverse-4: var(--gray-3);
   --text-color: var(--light);
+  --link: #a48b00;
+  --link-hover: #3483e3;
 }
 
 // # tags
@@ -67,14 +73,14 @@ body {
 }
 
 a {
-  color: inherit;
   color: var(--link);
   text-decoration: none;
+  transition: color ease 0.2s;
 }
 
-a:visited {
-  color: var(--link-visited);
-}
+// a:visited {
+//   color: var(--link-visited);
+// }
 
 a:hover {
   color: var(--link-hover);

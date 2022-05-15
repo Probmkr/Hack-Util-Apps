@@ -40,9 +40,11 @@ function HeaderRight() {
 
 function HeaderTitle(props) {
   return (
-    <div className={styles.headerTitle}>
-      <span>{props.title}</span>
-    </div>
+    <Link href="#">
+      <div title="Go To Top" className={styles.headerTitle}>
+        <span>{props.title}</span>
+      </div>
+    </Link>
   );
 }
 
@@ -53,6 +55,7 @@ function SideBarToggleButton() {
         id="sidebarToggleButton"
         className={styles.sidebarToggleButton}
         onClick={sidebarToggleButtonClicked}
+        title="Toggle Sidebar"
       >
         <div className={styles.sidebarToggleButtonArea}>
           <span></span>
@@ -71,13 +74,33 @@ function Title() {
 function UserIcon() {
   return (
     <div className={styles.userIcon}>
-      <Image
+      {/* <Image
         className={styles.userIconImg}
         src="/default-user-icon.svg"
         width={36}
         height={36}
         alt="user"
-      />
+      /> */}
+      <svg
+        className={styles.userIconImg}
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        // width="36"
+        // height="36"
+        stroke="white"
+        viewBox="0 0 600 600"
+        strokeWidth="30"
+        fill="none"
+      >
+        <title>Login</title>
+
+        <circle cx="300" cy="300" r="265" />
+        <circle cx="300" cy="230" r="115" />
+        <path
+          d="M106.81863443903,481.4 a205,205 1 0,1 386.36273112194,0"
+          strokeLinecap="butt"
+        />
+      </svg>
       {/* <span>not implemented yet</span> */}
     </div>
   );
