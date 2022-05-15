@@ -1,4 +1,4 @@
-# hack-util-apps
+# hack-util-apps (test-ver)
 
 これは、プログラミング・ハッキング（サイバーセキュリティ）の勉強を助長しようと作り始めたウェブアプリ集です。
 今はまだ作成段階にあります。
@@ -7,8 +7,8 @@
 
 まず、レポジトリをクローンします。
 
-`git clone https://github.com/Probmkr/hack-util-apps.git`
-（公開鍵の場合: `git clone git@github.com:Probmkr/hack-util-apps.git`）
+`git clone https://github.com/Probmkr/test_next_project.git`
+（公開鍵の場合: `git clone git@github.com:Probmkr/test_next_project.git`）
 
 次に、レポジトリのディレクトリに `cd` します。
 
