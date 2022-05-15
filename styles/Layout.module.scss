@@ -1,10 +1,14 @@
 .container {
   min-height: 100vh;
+  // margin-top: calc(var(--dark-mode-button-size) * -1);
 
   .mainContainer {
+    z-index: 99;
+    position: relative;
     padding-top: var(--header-height);
     padding-left: 5px;
     padding-right: 5px;
+    flex: 1;
 
     .main {
       min-height: 100%;

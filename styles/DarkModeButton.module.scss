@@ -1,0 +1,12 @@
+.darkModeButton {
+  position: fixed;
+  right: 30px;
+  bottom: 50px;
+  width: var(--dark-mode-button-size);
+  height: var(--dark-mode-button-size);
+  border-radius: calc(var(--dark-mode-button-size) / 2);
+  background-color: var(--theme-reverse-1);
+  cursor: pointer;
+  user-select: none;
+}
+

@@ -60,16 +60,17 @@ function changeBackgroundColor() {
   nowBGColor++;
   document
     .querySelector("body")
-    .classList.remove(colors[(nowBGColor - 1) % colors.length]);
+    .classList.remove(...colors);
   document
     .querySelector("header")
-    .classList.remove(colors[(nowBGColor - 1) % colors.length]);
+    .classList.remove(...colors);
   document.querySelector("body").classList.add(colors[nowBGColor % colors.length]);
   document.querySelector("header").classList.add(colors[nowBGColor % colors.length]);
 }
 
 function changeBackgroundColorTo(color: string) {
-  document.querySelector("body").className = color;
+  document.querySelector("body").classList.remove(...colors);
+  document.querySelector("body").classList.add(color);
 }
 
 function changeTextColor() {

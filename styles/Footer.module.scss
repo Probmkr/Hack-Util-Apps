@@ -3,7 +3,9 @@
   padding: 10px;
   width: 100%;
   // min-height: var(--footer-height);
-  border-top: var(--gray-3) solid 2px;
+  border-top: var(--theme-4) solid 2px;
+  background-color: var(--theme-2);
+  transition: background-color var(--footer-transition), border-color var(--footer-transition);
 
   .footerContents {
     min-height: 100%;
