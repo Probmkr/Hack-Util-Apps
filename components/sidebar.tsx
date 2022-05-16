@@ -1,5 +1,7 @@
-import Link from "next/link";
+import styles from "../styles/Sidebar.module.scss";
 
 export default function Sidebar() {
-  return <></>;
+  return (
+    <div id="sidebar" className={styles.sidebar}></div>
+  );
 }

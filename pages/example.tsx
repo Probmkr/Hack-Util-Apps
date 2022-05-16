@@ -1,7 +1,7 @@
 import styles from "../styles/ColorTest.module.scss";
 import Layout from "../components/layout";
 import Link from "next/link";
-import { RemoveClasses } from "../components/functions";
+import { removeClasses } from "../components/functions";
 import { grayScaleColors } from "../env/vars.json";
 
 let nowBGColor: number = 0;
@@ -35,7 +35,7 @@ export default function ColorTest() {
             Change background color
           </button>
           <button onClick={changeTextColor}>Change text color</button>
-          <button onClick={() => {RemoveClasses("body", [...grayScaleColors, "light"]);}}>Reset to default</button>
+          <button onClick={() => {removeClasses("body", [...grayScaleColors, "light"]);}}>Reset to default</button>
         </div>
         <div className={styles.colorTestBoxContainer}>{colorsBoxes}</div>
       </div>
@@ -55,8 +55,8 @@ function changeBackgroundColor() {
   // document
   //   .querySelector("header")
   //   .classList.remove(...grayScaleColors);
-  RemoveClasses("body", grayScaleColors);
-  RemoveClasses("header", grayScaleColors);
+  removeClasses("body", grayScaleColors);
+  removeClasses("header", grayScaleColors);
   document
     .querySelector("body")
     .classList.add(grayScaleColors[nowBGColor % grayScaleColors.length]);
@@ -66,7 +66,7 @@ function changeBackgroundColor() {
 }
 
 function changeBackgroundColorTo(color: string) {
-  RemoveClasses("body", grayScaleColors);
+  removeClasses("body", grayScaleColors);
   document.querySelector("body").classList.add(color);
 }
 

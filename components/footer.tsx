@@ -3,7 +3,7 @@ import FooterContents from "./footerContents";
 
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer id="footer" className={styles.footer}>
       <FooterContents />
     </footer>
   );

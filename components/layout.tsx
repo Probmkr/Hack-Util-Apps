@@ -4,7 +4,7 @@ import Header from "./header";
 import Footer from "./footer";
 import DarkModeButton from "./darkModeButton";
 import Sidebar from "./sidebar";
-import { InitialTheme } from "./functions";
+import { initialTheme } from "./functions";
 import styles from "../styles/Layout.module.scss";
 
 export default function Layout({
@@ -15,7 +15,7 @@ export default function Layout({
   noDarkModeButton = false,
 }) {
   useEffect(() => {
-    InitialTheme();
+    initialTheme();
   }, [])
 
   return (

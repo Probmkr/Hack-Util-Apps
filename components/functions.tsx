@@ -1,21 +1,31 @@
-import Cokies from "js-cookie";
+import Cookies from "js-cookie";
 
-export function RemoveClasses(query: string, classes: string[]) {
+export function removeClasses(query: string, classes: string[]) {
   document.querySelector(query).classList.remove(...classes);
 }
 
-export function DarkMode() {
+export function darkModeTheme() {
   let body: HTMLElement = document.querySelector("body");
   body.classList.toggle("dark-mode");
   body.classList.contains("dark-mode")
-    ? Cokies.set("dark-mode", "true", { bbb: "aaa" })
-    : Cokies.set("dark-mode", "false", { bbb: "aaa" });
+    ? Cookies.set("dark-mode", "true", { sameSite: "lax" })
+    : Cookies.set("dark-mode", "false", { sameSite: "lax" });
 }
 
-export function InitialTheme() {
+export function changeThemeTo(theme: string) {
   let body: HTMLElement = document.querySelector("body");
-  let darkMode: string = Cokies.get("dark-mode");
-  if (darkMode === "true") {
+  body.className = theme;
+  Cookies.set("theme", theme, { sameSite: "lax" });
+}
+
+export function initialTheme() {
+  let body: HTMLElement = document.querySelector("body");
+  let theme: string = Cookies.get("theme");
+  let darkMode: string = Cookies.get("dark-mode");
+  if (theme) {
+    body.className = theme;
+  } else if (darkMode === "true") {
     body.classList.add("dark-mode");
   }
 }
+

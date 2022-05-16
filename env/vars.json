@@ -15,5 +15,16 @@
     "bg-gray-5",
     "bg-dark",
     "bg-true-black"
-  ]
+  ],
+  "sidebarContents": {
+    "StaticPages": [
+      "Top",
+      "Apps",
+      "About",
+      "Contact"
+    ],
+    "PopularApps": false,
+    "RecentApps": false,
+    "Categories": false
+  }
 }

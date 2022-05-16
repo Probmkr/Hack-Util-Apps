@@ -6,6 +6,7 @@
   --dark-mode-button-transition: 0.2s;
   --header-height: 80px;
   --footer-height: 100px;
+  --sidebar-width: 250px;
   --dark-mode-button-size: 40px;
   --dark-mode-button-right: 30px;
   --dark-mode-button-bottom: 60px;
@@ -25,6 +26,8 @@
   --gray-4: #282c3d;
   --gray-5: #1c1f2b;
   --dark: #10121a;
+  --black-sidebar-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  --white-sidebar-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
   --link: #09b900;
   --link-visited: #a48b00;
   --link-hover: #09366e;
@@ -32,10 +35,12 @@
   --theme-2: var(--gray-1);
   --theme-3: var(--gray-2);
   --theme-4: var(--gray-3);
+  --theme-shadow: var(--black-sidebar-shadow);
   --theme-reverse-1: var(--dark);
   --theme-reverse-2: var(--gray-5);
   --theme-reverse-3: var(--gray-4);
   --theme-reverse-4: var(--gray-350);
+  --theme-reverse-shadow: var(--white-sidebar-shadow);
   --text-color: var(--dark);
 }
 
@@ -44,13 +49,34 @@
   --theme-2: var(--gray-5);
   --theme-3: var(--gray-4);
   --theme-4: var(--gray-350);
+  --theme-shadow: var(--white-sidebar-shadow);
   --theme-reverse-1: var(--true-white);
   --theme-reverse-2: var(--gray-1);
   --theme-reverse-3: var(--gray-2);
   --theme-reverse-4: var(--gray-3);
+  --theme-reverse-shadow: var(--black-sidebar-shadow);
   --text-color: var(--light);
-  --link: #a48b00;
+  --link: #d4bb01;
   --link-hover: #3483e3;
+}
+
+.communism-mode {
+  --theme-1: #ff0000;
+  --theme-2: #ff4500;
+  --theme-3: #ff6347;
+  --theme-4: #ff7f50;
+  --theme-reverse-1: green;
+  --theme-reverse-2: forestgreen;
+  --theme-reverse-3: seagreen;
+  --theme-reverse-4: mediumseagreen;
+  --text-color: yellow;
+  --link: yellow;
+  --link-hover: magenta;
+}
+
+body.communism-mode *::selection {
+  background-color: yellow;
+  color: red;
 }
 
 // # tags
@@ -222,6 +248,11 @@ a:hover {
 // ## other
 
 .button {
+  cursor: pointer;
+  user-select: none;
+}
+
+.cursor-pointer {
   cursor: pointer;
   user-select: none;
 }

@@ -1,0 +1,21 @@
+.sidebar {
+  z-index: 125;
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  background: #fff;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  transition: margin-left 0.5s ease-in-out, background-color var(--body-transition) ease, box-shadow var(--body-transition) ease;
+  margin-left: calc(var(--sidebar-width) * -1 - 20px);
+  box-shadow: var(--theme-shadow);
+  background-color: var(--theme-2);
+  padding: 24px;
+}
+
+.sidebar.open {
+  margin-left: 0;
+}
+

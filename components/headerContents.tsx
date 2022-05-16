@@ -1,4 +1,5 @@
 import styles from "../styles/Header.module.scss";
+import sidebarStyles from "../styles/Sidebar.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -108,6 +109,8 @@ function UserIcon() {
 
 function sidebarToggleButtonClicked() {
   console.log("sidebarToggleButtonClicked");
-  const target = document.getElementById("sidebarToggleButton");
-  target.classList.toggle(styles.active);
+  const self = document.getElementById("sidebarToggleButton");
+  self.classList.toggle(styles.active);
+  const sidebar = document.getElementById("sidebar");
+  sidebar.classList.toggle(sidebarStyles.open);
 }
