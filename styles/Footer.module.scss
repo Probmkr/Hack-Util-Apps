@@ -5,7 +5,8 @@
   // min-height: var(--footer-height);
   border-top: var(--theme-4) solid 2px;
   background-color: var(--theme-2);
-  transition: background-color var(--footer-transition), border-color var(--footer-transition);
+  transition: background-color var(--footer-transition),
+    border-color var(--footer-transition);
 
   .footerContents {
     min-height: 100%;
@@ -16,7 +17,56 @@
     width: 100%;
 
     .footerTop {
-      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      .footerTopLeft {
+        margin-right: calc(
+          var(--dark-mode-button-right) * 2 + var(--dark-mode-button-size)
+        );
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .SNSIconNav {
+          .SNSIconList {
+            display: flex;
+            justify-content: flex-end;
+
+            li {
+              margin-left: 1rem;
+              cursor: pointer;
+              user-select: none;
+
+              svg {
+                width: 32px;
+                transition: fill var(--footer-transition);
+                fill: var(--theme-reverse-2);
+              }
+            }
+
+            li.SNSTwitter {
+              .SNSTwitterIcon {
+                fill-rule: evenodd;
+                clip-rule: evenodd;
+                stroke-linejoin: round;
+                stroke-miterlimit: 2;
+
+                rect {
+                  fill: none;
+                }
+
+                path {
+                  fill: #1da1f2;
+                  fill-rule: nonzero;
+                }
+              }
+            }
+          }
+        }
+      }
     }
 
     .footerBottom {
@@ -26,7 +76,7 @@
       align-items: center;
 
       .copyright {
-        font-family: 'Courier New', Courier, monospace;
+        font-family: "Courier New", Courier, monospace;
       }
     }
   }

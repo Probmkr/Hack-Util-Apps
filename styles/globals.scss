@@ -8,8 +8,8 @@
   --footer-height: 100px;
   --sidebar-width: 250px;
   --dark-mode-button-size: 40px;
-  --dark-mode-button-right: 30px;
-  --dark-mode-button-bottom: 60px;
+  --dark-mode-button-right: 20px;
+  --dark-mode-button-bottom: 20px;
   --user-icon-size: 36px;
   --opacity: 1;
   --true-white: #fff;
@@ -81,6 +81,10 @@ body.communism-mode *::selection {
 
 // # tags
 
+#container {
+  box-sizing: content-box;
+}
+
 html,
 body {
   padding: 0;
@@ -94,7 +98,11 @@ body {
   width: 100vw;
   color: var(--text-color);
   background-color: var(--theme-1);
-  transition: color var(--body-transition), background-color ease var(--body-transition), border-color var(--body-transition);
+  transition: color var(--body-transition),
+    background-color ease var(--body-transition),
+    border-color var(--body-transition);
+  overflow-y: scroll;
+  overflow-x: hidden;
   // color: var(--gray-5);
 }
 
@@ -114,6 +122,16 @@ a:hover {
 
 * {
   box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  text-decoration: none;
 }
 
 // # classess
@@ -256,3 +274,5 @@ a:hover {
   cursor: pointer;
   user-select: none;
 }
+
+// # scroll bar
