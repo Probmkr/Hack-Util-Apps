@@ -6,10 +6,19 @@ export function removeClasses(query: string, classes: string[]) {
 
 export function darkModeTheme() {
   let body: HTMLElement = document.querySelector("body");
-  body.classList.toggle("dark-mode");
-  body.classList.contains("dark-mode")
-    ? Cookies.set("dark-mode", "true", { sameSite: "lax" })
-    : Cookies.set("dark-mode", "false", { sameSite: "lax" });
+  let isDark: boolean = body.classList.contains("dark-mode");
+  isDark ? body.classList.remove("dark-mode") : changeThemeTo("dark-mode");
+  if (isDark) {
+    body.classList.remove("dark-mode");
+    Cookies.set("theme", "nothing");
+  } else {
+    changeThemeTo("dark-mode");
+    Cookies.set("theme", "dark-mode");
+  }
+  // body.classList.toggle("dark-mode");
+  // body.classList.contains("dark-mode")
+  //   ? Cookies.set("dark-mode", "true", { sameSite: "lax" })
+  //   : Cookies.set("dark-mode", "false", { sameSite: "lax" });
 }
 
 export function changeThemeTo(theme: string) {
@@ -21,6 +30,7 @@ export function changeThemeTo(theme: string) {
 export function initialTheme() {
   let body: HTMLElement = document.querySelector("body");
   let theme: string = Cookies.get("theme");
+  theme == "nothing" ? null : theme;
   let darkMode: string = Cookies.get("dark-mode");
   if (theme) {
     body.className = theme;
