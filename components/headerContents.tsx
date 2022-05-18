@@ -108,7 +108,6 @@ function UserIcon() {
 }
 
 function sidebarToggleButtonClicked() {
-  console.log("sidebarToggleButtonClicked");
   const self = document.getElementById("sidebarToggleButton");
   self.classList.toggle(styles.active);
   const sidebar = document.getElementById("sidebar");

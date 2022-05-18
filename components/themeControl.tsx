@@ -23,10 +23,9 @@ export function darkModeTheme() {
   let isDark: boolean = body.classList.contains("dark-mode");
   if (isDark) {
     body.classList.remove("dark-mode");
-    Cookies.set("theme", "nothing");
+    Cookies.set("theme", "nothing", { sameSite: "lax" });
   } else {
     changeThemeTo("dark-mode");
-    Cookies.set("theme", "dark-mode");
+    Cookies.set("theme", "dark-mode", { sameSite: "lax" });
   }
 }
-

@@ -9,7 +9,6 @@ let nowBGColor: number = 0;
 export default function ColorTest() {
   const colorsBoxes = [];
   grayScaleColors.forEach((color) => {
-    console.log(color);
     colorsBoxes.push(
       <div
         key={color}
