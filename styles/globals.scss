@@ -276,3 +276,19 @@ li {
 }
 
 // # scroll bar
+
+// # device width
+
+@media screen and (max-width: 470px) {
+  :root {
+    --dark-mode-button-bottom: 30px;
+    --dark-mode-button-size: 35px;
+  }
+}
+
+@media screen and (max-width: 315px) {
+  :root {
+    --dark-mode-button-bottom: 50px;
+    --dark-mode-button-size: 30px;
+  }
+}

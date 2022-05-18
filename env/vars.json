@@ -17,12 +17,20 @@
     "bg-true-black"
   ],
   "sidebarContents": {
-    "StaticPages": [
-      "Top",
-      "Apps",
-      "About",
-      "Contact"
-    ],
+    "StaticPages": {
+      "Apps": {
+        "url": "/apps",
+        "title": "Apps"
+      },
+      "About": {
+        "url": "/static/about",
+        "title": "About"
+      },
+      "Contact": {
+        "url": "/static/contact",
+        "title": "Contact"
+      }
+    },
     "PopularApps": false,
     "RecentApps": false,
     "Categories": false

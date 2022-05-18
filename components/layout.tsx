@@ -4,7 +4,7 @@ import Header from "./header";
 import Footer from "./footer";
 import DarkModeButton from "./darkModeButton";
 import Sidebar from "./sidebar";
-import { initialTheme } from "./functions";
+import { initialTheme } from "./themeControl";
 import styles from "../styles/Layout.module.scss";
 
 export default function Layout({
