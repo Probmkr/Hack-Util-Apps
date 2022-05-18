@@ -4,6 +4,7 @@ export default function changeThemeTo(theme: string) {
   let body: HTMLElement = document.querySelector("body");
   body.className = theme;
   Cookies.set("theme", theme, { sameSite: "lax" });
+  toggleJapanTheme();
 }
 
 export function initialTheme() {
@@ -16,6 +17,7 @@ export function initialTheme() {
   } else if (darkMode === "true") {
     body.classList.add("dark-mode");
   }
+  toggleJapanTheme();
 }
 
 export function darkModeTheme() {
@@ -27,5 +29,24 @@ export function darkModeTheme() {
   } else {
     changeThemeTo("dark-mode");
     Cookies.set("theme", "dark-mode", { sameSite: "lax" });
+  }
+}
+
+export function toggleJapanTheme() {
+  console.log("toggled");
+  const body = document.querySelector("body");
+  const isJapanMode = body.classList.contains("japan-mode");
+  const isExists = Boolean(document.getElementById("japan-circle"));
+  console.log("isExists: ", isExists);
+  console.log("isJapanMode: ", isJapanMode)
+  if (isJapanMode && !isExists) {
+    const container = document.getElementById("container");
+    const japanCircle = document.createElement("div");
+    japanCircle.id = "japan-circle";
+    japanCircle.className = "japan-circle";
+    container.appendChild(japanCircle);
+  } else if (!isJapanMode && isExists) {
+    const japanCircle = document.getElementById("japan-circle");
+    japanCircle.remove();
   }
 }

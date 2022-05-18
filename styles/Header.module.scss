@@ -7,7 +7,8 @@
   border-top: var(--theme-4) solid 2px;
   // background-color: rgba(0, 0, 0, 0);
   background-color: var(--theme-2);
-  transition: background-color var(--header-transition), border-color var(--header-transition);
+  transition: background-color var(--header-transition),
+    border-color var(--header-transition);
 
   .headerContents {
     display: flex;
@@ -65,7 +66,6 @@
   }
 
   .sidebarToggleButton.active {
-
     .sidebarToggleButtonArea {
       transform: rotate(-360deg);
     }

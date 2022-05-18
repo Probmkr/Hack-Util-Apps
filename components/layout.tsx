@@ -16,7 +16,8 @@ export default function Layout({
 }) {
   useEffect(() => {
     initialTheme();
-  }, [])
+    console.log("used effect");
+  });
 
   return (
     <>
