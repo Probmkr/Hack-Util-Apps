@@ -1,0 +1,111 @@
+yarn run v1.22.15
+$ next build
+info  - Checking validity of types...
+info  - Creating an optimized production build...
+warn  - Compiled with warnings
+
+./components/sidebarContents.tsx
+Should not import the named export 'sidebarContents'.'StaticPages' (imported as 'sidebarContents') from default-exporting module (only default export is available soon)
+
+Import trace for requested module:
+./components/sidebar.tsx
+./components/layout.tsx
+./pages/index.tsx
+
+./pages/example.tsx
+Attempted import error: 'grayScaleColors'.'forEach' is not exported from '../env/vars.json' (imported as 'grayScaleColors').
+
+./pages/example.tsx
+Should not import the named export 'grayScaleColors' (imported as 'grayScaleColors') from default-exporting module (only default export is available soon)
+
+./pages/example.tsx
+Should not import the named export 'grayScaleColors' (imported as 'grayScaleColors') from default-exporting module (only default export is available soon)
+
+./pages/example.tsx
+Should not import the named export 'grayScaleColors' (imported as 'grayScaleColors') from default-exporting module (only default export is available soon)
+
+./pages/example.tsx
+Should not import the named export 'grayScaleColors' (imported as 'grayScaleColors') from default-exporting module (only default export is available soon)
+
+./pages/example.tsx
+Attempted import error: 'grayScaleColors'.'length' is not exported from '../env/vars.json' (imported as 'grayScaleColors').
+
+./pages/example.tsx
+Should not import the named export 'grayScaleColors' (imported as 'grayScaleColors') from default-exporting module (only default export is available soon)
+
+./pages/example.tsx
+Attempted import error: 'grayScaleColors'.'length' is not exported from '../env/vars.json' (imported as 'grayScaleColors').
+
+./pages/example.tsx
+Should not import the named export 'grayScaleColors' (imported as 'grayScaleColors') from default-exporting module (only default export is available soon)
+
+./pages/index.tsx
+Should not import the named export 'siteTitle' (imported as 'siteTitle') from default-exporting module (only default export is available soon)
+
+./components/sidebarContents.tsx
+Should not import the named export 'sidebarContents'.'StaticPages' (imported as 'sidebarContents') from default-exporting module (only default export is available soon)
+
+Import trace for requested module:
+./components/sidebar.tsx
+./components/layout.tsx
+./pages/index.tsx
+
+./pages/example.tsx
+Attempted import error: 'grayScaleColors'.'forEach' is not exported from '../env/vars.json' (imported as 'grayScaleColors').
+
+./pages/example.tsx
+Should not import the named export 'grayScaleColors' (imported as 'grayScaleColors') from default-exporting module (only default export is available soon)
+
+./pages/example.tsx
+Should not import the named export 'grayScaleColors' (imported as 'grayScaleColors') from default-exporting module (only default export is available soon)
+
+./pages/example.tsx
+Should not import the named export 'grayScaleColors' (imported as 'grayScaleColors') from default-exporting module (only default export is available soon)
+
+./pages/example.tsx
+Should not import the named export 'grayScaleColors' (imported as 'grayScaleColors') from default-exporting module (only default export is available soon)
+
+./pages/example.tsx
+Attempted import error: 'grayScaleColors'.'length' is not exported from '../env/vars.json' (imported as 'grayScaleColors').
+
+./pages/example.tsx
+Should not import the named export 'grayScaleColors' (imported as 'grayScaleColors') from default-exporting module (only default export is available soon)
+
+./pages/example.tsx
+Attempted import error: 'grayScaleColors'.'length' is not exported from '../env/vars.json' (imported as 'grayScaleColors').
+
+./pages/example.tsx
+Should not import the named export 'grayScaleColors' (imported as 'grayScaleColors') from default-exporting module (only default export is available soon)
+
+./pages/index.tsx
+Should not import the named export 'siteTitle' (imported as 'siteTitle') from default-exporting module (only default export is available soon)
+
+info  - Collecting page data...
+info  - Generating static pages (0/5)
+info  - Generating static pages (1/5)
+info  - Generating static pages (2/5)
+info  - Generating static pages (3/5)
+info  - Generating static pages (5/5)
+info  - Finalizing page optimization...
+
+Page                                       Size     First Load JS
+┌ ○ /                                      499 B          86.1 kB
+├   └ css/bf338d24617c7374.css             1.65 kB
+├   /_app                                  0 B            78.1 kB
+├ ○ /404                                   193 B          78.3 kB
+├ λ /api/hello                             0 B            78.1 kB
+├ ○ /example                               1.28 kB        86.9 kB
+├   └ css/4c99f21d234cf300.css             1.7 kB
+└ ○ /sub_index                             6.19 kB        84.3 kB
+    └ css/181e2313f7913774.css             230 B
++ First Load JS shared by all              78.1 kB
+  ├ chunks/framework-a87821de553db91d.js   45 kB
+  ├ chunks/main-fc7d2f0e2098927e.js        28.7 kB
+  ├ chunks/pages/_app-96597a807f2ffe70.js  3.64 kB
+  ├ chunks/webpack-d7b038a63b619762.js     771 B
+  └ css/76a73f8381f53358.css               1.45 kB
+
+λ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
+○  (Static)  automatically rendered as static HTML (uses no initial props)
+
+Done in 13.95s.

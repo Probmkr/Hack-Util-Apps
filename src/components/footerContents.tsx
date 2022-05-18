@@ -1,6 +1,6 @@
 import styles from "../styles/Footer.module.scss";
 import Link from "next/link";
-import changeThemeTo, { toggleJapanTheme } from "./themeControl";
+import changeThemeTo from "./themeControl";
 
 export default function FooterContents() {
   return (
@@ -141,15 +141,7 @@ function FooterCopyright() {
         >
           ©
         </span>{" "}
-        {new Date().getFullYear()} Probmkr All Rights Reserved
-        <span
-          className="cursor-pointer"
-          onClick={() => {
-            changeThemeTo("japan-mode");
-          }}
-        >
-          .
-        </span>
+        {new Date().getFullYear()} Probmkr All Rights Reserved.
       </span>
     </div>
   );
