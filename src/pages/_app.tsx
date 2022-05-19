@@ -1,5 +1,4 @@
 import "../styles/globals.scss";
-import React, { useEffect } from "react";
 import NextNprogress from "nextjs-progressbar";
 
 function MyApp({ Component, pageProps }) {

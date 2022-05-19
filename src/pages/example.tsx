@@ -1,7 +1,7 @@
 import styles from "../styles/ColorTest.module.scss";
 import Layout from "../components/layout";
 import Link from "next/link";
-import { removeClasses } from "../components/functions";
+import { removeClasses } from "../lib/functions";
 import { grayScaleColors } from "../env/vars.json";
 
 let nowBGColor: number = 0;

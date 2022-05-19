@@ -18,6 +18,10 @@
   ],
   "sidebarContents": {
     "StaticPages": {
+      "Home": {
+        "url": "/",
+        "title": "Home"
+      },
       "Apps": {
         "url": "/apps",
         "title": "Apps"
@@ -29,6 +33,10 @@
       "Contact": {
         "url": "/static/contact",
         "title": "Contact"
+      },
+      "ColorTestPage": {
+        "url": "/example",
+        "title": "Color Test"
       }
     },
     "PopularApps": false,

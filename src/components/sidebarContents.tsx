@@ -1,13 +1,16 @@
 import Link from "next/link";
 import styles from "../styles/Sidebar.module.scss";
 import { sidebarContents } from "../env/vars.json";
-const staticPages: object = sidebarContents.StaticPages;
+import { useRouter } from "next/router";
+const staticPagesData: object = sidebarContents.StaticPages;
 
 export default function SidebarContents() {
   return (
     <div className={styles.sidebarContents}>
       <SidebarLogo />
+      <hr />
       <StaticPages />
+      <hr />
     </div>
   );
 }
@@ -21,19 +24,22 @@ function SidebarLogo() {
 }
 
 function StaticPages() {
+  const router = useRouter();
+  console.log(router.pathname);
+  const staticPages = Object.keys(staticPagesData).map((key) => {
+    const page = staticPagesData[key];
+    const isThisPage = router.pathname === page.url;
+    return (
+      <li key={key} className={isThisPage ? styles.selected : null}>
+        <Link href={isThisPage ? "#" : page.url}>
+          <a>{page.title}</a>
+        </Link>
+      </li>
+    );
+  });
   return (
     <div className={styles.staticPages}>
-      <SBNav>
-        {Object.keys(staticPages).forEach((key) => {
-          return (
-            <li key={key}>
-              <Link href={staticPages[key]}>
-                <a>{key}</a>
-              </Link>
-            </li>
-          );
-        })}
-      </SBNav>
+      <SBNav>{staticPages}</SBNav>
     </div>
   );
 }

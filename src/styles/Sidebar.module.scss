@@ -17,6 +17,10 @@
   padding: 24px;
 
   .sidebarContents {
+    hr {
+      margin: 22px 0;
+    }
+
     .sidebarLogo {
       text-align: center;
 
@@ -25,6 +29,46 @@
         font-family: "Courier New", Courier, monospace;
         font-weight: bold;
         color: var(--theme-reverse-1);
+      }
+
+      a:hover {
+        color: var(--link-hover);
+      }
+    }
+  }
+
+  .sidebarContents > .staticPages {
+    margin: 4px;
+
+    li {
+      width: 100%;
+      display: flex;
+      border-radius: 5px;
+      margin: 2px 0;
+      // border: var(--gray-330) solid 2px;
+      // background-color: var(--theme-1);
+      text-align: center;
+      transition: background-color var(--body-transition);
+
+      a {
+        padding: 8px 0;
+        vertical-align: center;
+        display: inline-block;
+        width: 100%;
+        padding: auto 0;
+      }
+    }
+
+    li:hover {
+      background-color: var(--theme-3);
+    }
+
+    li.selected {
+      // --link: #87c384;
+      background-color: var(--theme-4);
+
+      a {
+        color: var(--link-hover);
       }
     }
   }

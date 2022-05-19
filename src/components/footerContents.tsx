@@ -1,6 +1,6 @@
 import styles from "../styles/Footer.module.scss";
 import Link from "next/link";
-import changeThemeTo from "./themeControl";
+import changeThemeTo from "../lib/themeControl";
 
 export default function FooterContents() {
   return (

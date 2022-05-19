@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <Layout pageTitle="Welcome!" noFooter={false}>
+    <Layout home pageTitle="Welcome!" noFooter={false}>
       <h1>
         Welcome to
         <span className={styles.logo}>
