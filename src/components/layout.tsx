@@ -15,16 +15,13 @@ export default function Layout({
   noHeader = false,
   noFooter = false,
   noDarkModeButton = false,
-  plainCookies = null,
-  plain = null,
-  theme = null,
 }) {
   useEffect(() => {
     initialTheme();
   });
 
   return (
-    <div id="bgContainer">
+    <>
       <div id="container" className={`${styles.container} flex flex-column`}>
         <Head>
           <title>{home ? siteTitle : pageTitle + " | Hack Util Apps"}</title>
@@ -39,6 +36,6 @@ export default function Layout({
         </div>
         {noFooter ? null : <Footer />}
       </div>
-    </div>
+    </>
   );
 }

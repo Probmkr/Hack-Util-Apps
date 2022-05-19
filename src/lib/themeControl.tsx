@@ -1,33 +1,30 @@
 import Cookies from "js-cookie";
+import { siteThemes } from "../env/vars.json";
 
 export default function changeThemeTo(theme: string) {
-  let container: HTMLElement = document.getElementById("bgContainer");
-  container.className = theme;
+  const body: HTMLElement = document.querySelector("body");
+  body.classList.remove(...siteThemes);
+  body.classList.add(theme);
   Cookies.set("theme", theme, { sameSite: "lax" });
   // toggleJapanTheme();
 }
 
 export function initialTheme() {
-  let container: HTMLElement = document.getElementById("bgContainer");
-  let theme: string = Cookies.get("theme");
-  theme == "nothing" ? null : theme;
-  let darkMode: string = Cookies.get("dark-mode");
+  const body: HTMLElement = document.querySelector("body");
+  const theme: string = Cookies.get("theme");
   if (theme) {
-    container.className = theme;
-  } else if (darkMode === "true") {
-    container.classList.add("dark-mode");
+    body.classList.remove(...siteThemes);
+    body.classList.add(theme);
   }
   // toggleJapanTheme();
 }
 
 export function darkModeTheme() {
-  let container: HTMLElement = document.getElementById("bgContainer");
-  let isDark: boolean = container.classList.contains("dark-mode");
+  const body: HTMLElement = document.querySelector("body");
+  const isDark: boolean = body.classList.contains("dark-mode");
   if (isDark) {
-    container.classList.remove("dark-mode");
-    Cookies.set("theme", "nothing", { sameSite: "lax" });
+    changeThemeTo("nothing");
   } else {
     changeThemeTo("dark-mode");
-    Cookies.set("theme", "dark-mode", { sameSite: "lax" });
   }
 }

@@ -1,5 +1,10 @@
 {
   "siteTitle": "Hack Util Apps",
+  "siteThemes": [
+    "dark-mode",
+    "communism-mode",
+    "japan-mode"
+  ],
   "grayScaleColors": [
     "bg-true-white",
     "bg-light",

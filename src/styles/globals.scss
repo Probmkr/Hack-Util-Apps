@@ -160,6 +160,11 @@ body {
   width: 100vw;
   overflow-y: scroll;
   overflow-x: hidden;
+  color: var(--text-color);
+  background-color: var(--theme-1);
+  transition: color var(--body-transition),
+    background-color ease var(--body-transition),
+    border-color var(--body-transition);
   // color: var(--gray-5);
 }
 
