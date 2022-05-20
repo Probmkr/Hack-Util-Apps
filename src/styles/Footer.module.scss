@@ -36,14 +36,22 @@
             justify-content: flex-end;
 
             li {
-              margin-left: 1rem;
+              margin-left: 0.5rem;
               cursor: pointer;
               user-select: none;
 
               svg {
-                width: 32px;
-                transition: fill var(--footer-transition);
+                padding: 4px;
+                width: 40px;
+                height: 40px;
+                border-radius: 5px;
+                transition: fill var(--footer-transition), background-color var(--footer-transition);
                 fill: var(--theme-reverse-2);
+              }
+
+              svg:hover {
+                fill: var(--theme-2);
+                background-color: var(--theme-reverse-2);
               }
             }
 

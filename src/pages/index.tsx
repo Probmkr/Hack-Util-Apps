@@ -7,14 +7,13 @@ export default function Home() {
   return (
     <Layout home pageTitle="Welcome!" noFooter={false}>
       <h1>
-        Welcome to
         <span className={styles.logo}>
-          {" "}
-          <span className={styles.nobr}>{siteTitle}</span>!
+          <span className={styles.nobr}>{siteTitle}</span> へようこそ!
         </span>
       </h1>
+      <p>初めての方は...</p>
       <p>
-        <Link href="/example">color test page</Link>
+        <Link href="/static/about">このサイトについて</Link>をお読みください。
       </p>
     </Layout>
   );

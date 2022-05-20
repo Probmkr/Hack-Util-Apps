@@ -1,0 +1,16 @@
+{
+  "categories": [
+    {
+      "key": "others",
+      "name": "その他"
+    },
+    {
+      "key": "bug",
+      "name": "バグ"
+    },
+    {
+      "key": "suggesting",
+      "name": "改善案"
+    }
+  ]
+}

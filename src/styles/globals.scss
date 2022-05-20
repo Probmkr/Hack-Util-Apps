@@ -1,15 +1,15 @@
 // # vars
 :root {
   --main-container-padding: 20px;
-  --header-transition: 0.2s;
+  --header-transition: 0.3s;
   --header-height: 80px;
-  --body-transition: 0.4s;
+  --body-transition: 0.3s;
   --sidebar-width: 250px;
-  --dark-mode-button-transition: 0.2s;
+  --dark-mode-button-transition: 0.3s;
   --dark-mode-button-size: 40px;
   --dark-mode-button-right: 20px;
   --dark-mode-button-bottom: 20px;
-  --footer-transition: 0.6s;
+  --footer-transition: 0.3s;
   --footer-height: 100px;
   --user-icon-size: 36px;
   --opacity: 1;
@@ -36,6 +36,10 @@
   --theme-2: var(--gray-1);
   --theme-3: var(--gray-2);
   --theme-4: var(--gray-3);
+  --theme-dark-1: var(--gray-3);
+  --theme-dark-2: var(--gray-2);
+  --theme-dark-3: var(--gray-1);
+  --theme-dark-4: var(--true-white);
   --theme-shadow: var(--black-sidebar-shadow);
   --theme-reverse-1: var(--dark);
   --theme-reverse-2: var(--gray-5);
@@ -60,6 +64,10 @@
   --theme-2: var(--gray-5);
   --theme-3: var(--gray-4);
   --theme-4: var(--gray-350);
+  --theme-dark-1: var(--dark);
+  --theme-dark-2: var(--gray-5);
+  --theme-dark-3: var(--gray-4);
+  --theme-dark-4: var(--gray-350);
   --theme-shadow: var(--white-sidebar-shadow);
   --theme-reverse-1: var(--true-white);
   --theme-reverse-2: var(--gray-1);
@@ -76,6 +84,10 @@
   --theme-2: #ff4500;
   --theme-3: #ff6347;
   --theme-4: #ff7f50;
+  --theme-dark-1: #ff7f50;
+  --theme-dark-2: #ff6347;
+  --theme-dark-3: #ff4500;
+  --theme-dark-4: #ff0000;
   --theme-reverse-1: green;
   --theme-reverse-2: forestgreen;
   --theme-reverse-3: seagreen;
@@ -201,7 +213,7 @@ li {
 }
 
 p {
-  margin: 5px 0;
+  margin: 0.7rem 0;
 }
 
 // # classess
@@ -333,18 +345,6 @@ p {
   background-color: var(--gray-5);
 }
 
-// ## other
-
-.button {
-  cursor: pointer;
-  user-select: none;
-}
-
-.cursor-pointer {
-  cursor: pointer;
-  user-select: none;
-}
-
 // # mouseover window
 
 .mouseover-trigger {
@@ -367,6 +367,24 @@ p {
   z-index: 103;
   padding: 5px;
   transition: all var(--body-transition);
+}
+
+// ## other
+
+.button {
+  cursor: pointer;
+  user-select: none;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+  user-select: none;
+}
+
+.site-title {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-size: 1.2em;
 }
 
 // # scroll bar

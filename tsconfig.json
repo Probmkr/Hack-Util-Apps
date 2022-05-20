@@ -22,7 +22,8 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "public/static/contact-script.js"
   ],
   "exclude": [
     "node_modules"

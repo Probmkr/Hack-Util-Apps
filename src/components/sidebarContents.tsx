@@ -25,7 +25,6 @@ function SidebarLogo() {
 
 function StaticPages() {
   const router = useRouter();
-  console.log(router.pathname);
   const staticPages = Object.keys(staticPagesData).map((key) => {
     const page = staticPagesData[key];
     const isThisPage = router.pathname === page.url;

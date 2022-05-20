@@ -36,7 +36,7 @@
         "title": "About"
       },
       "Contact": {
-        "url": "/static/contact",
+        "url": "/contact",
         "title": "Contact"
       },
       "ColorTestPage": {

@@ -1,0 +1,8 @@
+{
+  "mysqlConnect": {
+    "host": "localhost",
+    "user": "user",
+    "password": "",
+    "database": "database"
+  }
+}
