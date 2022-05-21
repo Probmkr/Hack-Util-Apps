@@ -1,5 +1,3 @@
-use hua;
-
 drop table if exists contacts;
 
 create table contacts (
@@ -9,6 +7,6 @@ create table contacts (
   category varchar(255) not null,
   subject varchar(255) not null,
   message text not null,
-  ip varchar(64) not null,
+  ip varchar(63) not null,
   created_at datetime not null default current_timestamp
 );

@@ -1,6 +1,6 @@
-create database if not exists hua;
+create database if not exists hua_dev;
 
-use hua;
+use hua_dev;
 drop table if exists contacts;
 
 create table contacts (
