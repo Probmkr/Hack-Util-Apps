@@ -1,7 +1,7 @@
 import requestIp from "request-ip";
 import mysql from "mysql";
 import { NextApiRequest, NextApiResponse } from "next";
-import { mysqlConnect, mysqlDevconnect, develop, developError } from "../../env/config.json";
+import { mysqlConnect, mysqlDevConnect, develop, developError } from "../../env/config.json";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const body = req.body;
@@ -31,7 +31,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
   const ip = requestIp.getClientIp(req);
 
-  const connection = mysql.createConnection(develop ? mysqlDevconnect : mysqlConnect);
+  const connection = mysql.createConnection(develop ? mysqlDevConnect : mysqlConnect);
 
   const sentMessage = "Contact Sent";
   const errorMessage = "SQLError";
