@@ -32,7 +32,7 @@ export default function Page() {
             <input type="text" name="name" id="name" maxLength={255} required />
           </div>
           <div className={styles.inputs}>
-            <label className={styles.required} htmlFor="email">
+            <label htmlFor="email">
               メールアドレス：
             </label>
             <input type="email" name="email" id="email" maxLength={255} />

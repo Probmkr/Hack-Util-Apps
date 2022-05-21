@@ -4,5 +4,6 @@
     "user": "user",
     "password": "",
     "database": "database"
-  }
+  },
+  "develop": false
 }
