@@ -1,7 +1,7 @@
 drop table if exists contacts;
 
 create table contacts (
-  id int not null primary key auto_increment,
+  id int unsigned not null primary key auto_increment,
   name varchar(255) not null,
   email varchar(255) not null,
   category varchar(255) not null,
