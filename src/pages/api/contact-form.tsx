@@ -36,7 +36,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const sentMessage = "Contact Sent";
   const errorMessage = "SQLError";
   connection.query(
-    "into contacts (name, email, category, subject, message, ip) values (?, ?, ?, ?, ?, ?)",
+    "insert into contacts (name, email, category, subject, message, ip) values (?, ?, ?, ?, ?, ?)",
     [body.name, body.email, body.category, body.subject, body.message, ip],
     (error, results, fields) => {
       if (error) {
