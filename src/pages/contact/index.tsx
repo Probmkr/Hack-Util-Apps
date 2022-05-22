@@ -3,11 +3,20 @@ import styles from "../../styles/contact/Contact.module.scss";
 import { categories } from "../../env/contactCategories.json";
 import Router from "next/router";
 import Script from "next/script";
+import hotkeys from "hotkeys-js";
+import { useEffect } from "react";
 
 export default function Page() {
+  useEffect(() => {
+    hotkeys("ctrl+enter,cmd+return", (event, handler) => {
+      event.preventDefault();
+      document.getElementById("submit").click();
+    });
+  });
+
   return (
     <Layout pageTitle="Contact">
-      <Script src="contact-script.js" strategy="afterInteractive"></Script>
+      <Script src="/script/contact/script.js" strategy="afterInteractive"></Script>
       <h1>コンタクトフォーム</h1>
       <p>何かあればお問い合わせください。</p>
       <p>
@@ -32,9 +41,7 @@ export default function Page() {
             <input type="text" name="name" id="name" maxLength={255} required />
           </div>
           <div className={styles.inputs}>
-            <label htmlFor="email">
-              メールアドレス：
-            </label>
+            <label htmlFor="email">メールアドレス：</label>
             <input type="email" name="email" id="email" maxLength={255} />
           </div>
           <div className={styles.inputs}>
@@ -63,7 +70,14 @@ export default function Page() {
           </div>
           <div className={styles.inputs}>
             <label className={styles.required} htmlFor="message">
-              メッセージ：<span className={styles.messageLetterCountOuter}><span id="messageLetterCount" className={styles.messageLetterCount}></span> 文字</span>
+              メッセージ：
+              <span className={styles.messageLetterCountOuter}>
+                <span
+                  id="messageLetterCount"
+                  className={styles.messageLetterCount}
+                ></span>{" "}
+                文字
+              </span>
             </label>
             <textarea
               placeholder="3000文字以内で入力してください。"
@@ -72,7 +86,7 @@ export default function Page() {
               required
             ></textarea>
           </div>
-          <input type="submit" value="送信" className={styles.submit} />
+          <input type="submit" id="submit" value="送信" className={styles.submit} />
         </form>
       </ul>
     </Layout>
@@ -117,7 +131,7 @@ async function handleSubmit(event) {
 
   const JSONData = JSON.stringify(data);
 
-  const endpoint = "/api/contact-form";
+  const endpoint = "/api/contact";
 
   const options = {
     method: "POST",
@@ -128,9 +142,11 @@ async function handleSubmit(event) {
   };
 
   const response = await fetch(endpoint, options);
-  console.log(response);
   const result = await response.json();
-  console.log(result);
   // Router.push("/contact/complete");
-  response.ok ? Router.push("/contact/complete") : Router.push(`/contact/error?error=${result.error}&status=${response.status}`);
+  response.ok
+    ? Router.push("/contact/complete")
+    : Router.push(
+        `/contact/error?error=${result.error}&status=${response.status}`
+      );
 }

@@ -41,11 +41,11 @@ function HeaderRight() {
 
 function HeaderTitle(props) {
   return (
-    <Link href="#">
+    <a href="#">
       <div title="Go To Top" className={styles.headerTitle}>
         <span>{props.title}</span>
       </div>
-    </Link>
+    </a>
   );
 }
 

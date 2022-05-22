@@ -29,16 +29,7 @@
   textarea,
   input,
   select {
-    font-size: 1rem;
     width: 300px;
-    background-color: var(--gray-1);
-    border-radius: 3px;
-    color: var(--theme-reverse-1);
-    background-color: var(--theme-2);
-    border-top: var(--theme-3) solid 2px;
-    border-left: var(--theme-3) solid 2px;
-    border-right: var(--theme-4) solid 2px;
-    border-bottom: var(--theme-4) solid 2px;
   }
 
   input {

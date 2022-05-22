@@ -97,6 +97,8 @@
     cursor: pointer;
     user-select: none;
     border-radius: 5px;
+    color: var(--theme-reverse-1);
+    transition: color var(--header-transition);
   }
 
   .headerTitle:hover {
