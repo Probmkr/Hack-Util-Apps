@@ -34,8 +34,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (!emailReg.test(body.email) && body.email) {
     return res.status(400).json({ error: enterValidEmail });
   }
-  // const ip = requestIp.getClientIp(req);
-  const ip = req.headers["x-forwarded-for"];
+  const ip = requestIp.getClientIp(req);
+  // const ip = req.headers["x-forwarded-for"];
 
   const connection = mysql.createConnection(
     develop ? mysqlDevConnect : mysqlConnect

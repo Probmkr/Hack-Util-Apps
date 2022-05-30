@@ -1,4 +1,5 @@
-import Layout from "../../../components/layout";
+import Layout from "../../../../components/layout";
+import dynamic from "next/dynamic";
 import styles from "./style.module.scss";
 
 export default function Ping() {
@@ -11,15 +12,9 @@ export default function Ping() {
         <input
           type="button"
           value="実行"
-          onClick={() => {
-            doPing();
-          }}
         ></input>
       </div>
       <div id="results"></div>
     </Layout>
   );
-}
-
-function doPing() {
 }

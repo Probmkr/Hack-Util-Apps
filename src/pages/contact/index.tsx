@@ -1,5 +1,5 @@
 import Layout from "../../components/layout";
-import styles from "../../styles/contact/Contact.module.scss";
+import styles from "../../styles/Form.module.scss";
 import { categories } from "../../env/contactCategories.json";
 import Router from "next/router";
 import Script from "next/script";
@@ -29,22 +29,22 @@ export default function Page() {
         <li>バグが発生する</li>
         <li>UI の改善案を提案する</li>
         <form
-          className={styles.contactForm}
+          className={styles.form}
           action="/api/contact-form"
           method="post"
           onSubmit={handleSubmit}
         >
-          <div className={styles.inputs}>
+          <div className={styles.input}>
             <label className={styles.required} htmlFor="name">
               ニックネーム：
             </label>
             <input type="text" name="name" id="name" maxLength={255} required />
           </div>
-          <div className={styles.inputs}>
+          <div className={styles.input}>
             <label htmlFor="email">メールアドレス：</label>
             <input type="email" name="email" id="email" maxLength={255} />
           </div>
-          <div className={styles.inputs}>
+          <div className={styles.input}>
             <label htmlFor="subject">カテゴリ：</label>
             <select name="category" id="category">
               {categories.map((category) => {
@@ -56,7 +56,7 @@ export default function Page() {
               })}
             </select>
           </div>
-          <div className={styles.inputs}>
+          <div className={styles.input}>
             <label className={styles.required} htmlFor="subject">
               件名：
             </label>
@@ -68,7 +68,7 @@ export default function Page() {
               required
             />
           </div>
-          <div className={styles.inputs}>
+          <div className={styles.input}>
             <label className={styles.required} htmlFor="message">
               メッセージ：
               <span className={styles.messageLetterCountOuter}>
