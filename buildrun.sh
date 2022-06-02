@@ -1,5 +1,6 @@
 #!/bin/bash
 
+npm i
 yarn build
 if [ $? != "0" ]; then
     exit 1
@@ -7,7 +8,7 @@ fi
 
 screen -ls builded > /dev/null
 if [ $? == "0" ]; then
-    screen -S dev -X quit
+    screen -S builded -X quit
 fi
 
 read -p "enter to continue: "
