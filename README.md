@@ -9,6 +9,10 @@ http://apps.probmkr.com:3001/
 
 ## テスト環境の作り方
 
+このWebサービスは複数サーバーで連携する必要はないです。
+
+ですが、万が一プルリクエストを送りたいときにはテスト環境を作るときにこちらを参考にしてください。
+
 まず、レポジトリをクローンします。
 
 `git clone https://github.com/Probmkr/test_next_project.git`
