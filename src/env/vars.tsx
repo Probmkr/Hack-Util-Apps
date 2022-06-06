@@ -1,7 +1,8 @@
 interface MyVars {
   siteTitle: string;
-  siteDescription: string;
   siteThemes: string[];
+  defaultDescription: string;
+  twitterAccount: string;
   grayScaleColors: string[];
   sidebarContents: {
     StaticPages: StaticPage;
@@ -28,8 +29,9 @@ interface MyCategory {
 
 const Vars: MyVars = {
   siteTitle: "Hack Util Apps",
-  siteDescription: "Apps for programmers and hackers",
   siteThemes: ["dark-mode", "communism-mode", "japan-mode"],
+  defaultDescription: "Probm によるウェブアプリ集",
+  twitterAccount: "@probmkrnew",
   grayScaleColors: [
     "bg-true-white",
     "bg-light",

@@ -1,4 +1,7 @@
 interface MyConfig {
+  siteHost: string;
+  siteFDQN: string;
+  certDir: string;
   mysqlConnect: {
     host: string;
     user: string;
@@ -16,6 +19,9 @@ interface MyConfig {
 }
 
 const Config: MyConfig = {
+  siteHost: "http://example.com",
+  siteFDQN: "example.com",
+  certDir: "Your HTTPS certificate directory",
   mysqlConnect: {
     host: "localhost",
     user: "user",
