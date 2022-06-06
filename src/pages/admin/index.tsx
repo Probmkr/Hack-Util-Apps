@@ -71,7 +71,7 @@ export default class AdminPage extends React.Component<
     }
   }
 
-  componentDidUpdate(prevProps: Readonly<{ isLoggedIn: boolean; }>, prevState: Readonly<{ appList: []; isLoginFailed: boolean; errorName: string; isLoggedIn: boolean; triedLogin: boolean; }>, snapshot?: any): void {
+  componentDidUpdate(): void {
     if (this.state.isLoggedIn) {
       Router.push("/admin/dashboard");
     }
