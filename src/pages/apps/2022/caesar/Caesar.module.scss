@@ -1,0 +1,24 @@
+.encrypted {
+  width: 100%;
+}
+
+.result {
+  width: 100%;
+  font-family: Courier, 'Courier New', monospace;
+}
+
+.element {
+  display: inline-block;
+}
+
+.decrypted {
+  display: inline-block;
+  width: 50%;
+  margin-left: 5px;
+}
+
+.copyright {
+  position: absolute;
+  top: 30px;
+  right: 60px;
+}

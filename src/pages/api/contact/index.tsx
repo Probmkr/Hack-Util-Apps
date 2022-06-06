@@ -1,14 +1,12 @@
 import requestIp from "request-ip";
-import mysql from "mysql";
+import mysql from "mysql2/promise";
 import { NextApiRequest, NextApiResponse } from "next";
-import {
-  mysqlConnect,
-  mysqlDevConnect,
-  develop,
-  developError,
-} from "../../../env/config.json";
+import Config from "../../../env/config";
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   const body = req.body;
   const fillAllData = "全ての必要なデータを入力してください。";
   if (!body.name || !body.subject || !body.message) {
@@ -37,25 +35,26 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const ip = requestIp.getClientIp(req);
   // const ip = req.headers["x-forwarded-for"];
 
-  const connection = mysql.createConnection(
-    develop ? mysqlDevConnect : mysqlConnect
+  const connection = await mysql.createConnection(
+    Config.develop ? Config.mysqlDevConnect : Config.mysqlConnect
   );
 
   const sentMessage = "Contact Sent";
   const errorMessage = "SQLError";
-  connection.query(
-    "insert into contacts (name, email, category, subject, message, ip) values (?, ?, ?, ?, ?, ?)",
-    [body.name, body.email, body.category, body.subject, body.message, ip],
-    (error, results, fields) => {
-      if (error) {
-        if (developError) {
-          return res.status(500).json({ error: error.message });
-        } else {
-          return res.status(500).json({ error: errorMessage });
-        }
-      }
-      return res.status(200).json({ message: sentMessage });
+  await connection.connect();
+  try {
+    const [results, fields] = await connection.query(
+      "insert into contacts (name, email, category, subject, message, ip) values (?, ?, ?, ?, ?, ?)",
+      [body.name, body.email, body.category, body.subject, body.message, ip]
+    );
+    res.status(200).json({ message: sentMessage });
+  } catch (e) {
+    if (Config.developError) {
+      return res.status(500).json({ error: e.message });
+    } else {
+      return res.status(500).json({ error: errorMessage });
     }
-  );
-  // res.status(200).json({ body });
+  } finally {
+    connection.end();
+  }
 }

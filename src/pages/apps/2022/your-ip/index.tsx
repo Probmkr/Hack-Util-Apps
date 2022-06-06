@@ -1,7 +1,6 @@
 import Layout from "../../../../components/layout";
 
 export default function YourIP({ ip, headers }) {
-  console.log(headers);
   return (
     <Layout pageTitle="Your IP">
       <h1>あなたの IP アドレス</h1>

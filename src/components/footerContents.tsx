@@ -1,8 +1,8 @@
-import styles from "../styles/Footer.module.scss";
+import styles from "../styles/components/Footer.module.scss";
 import Link from "next/link";
 import changeThemeTo from "../lib/themeControl";
 
-export default function FooterContents() {
+const FooterContents = () => {
   return (
     <div className={styles.footerContents}>
       <FooterTop />
@@ -148,3 +148,5 @@ function FooterCopyright() {
 }
 
 // vim: ft=typescript
+
+export default FooterContents;

@@ -1,14 +1,15 @@
-import styles from "../styles/Home.module.scss";
+import styles from "../styles/pages/Home.module.scss";
 import Layout from "../components/layout";
-import { siteTitle } from "../env/vars.json";
+import Vars from "../env/vars";
 import Link from "next/link";
+import { NextPage } from "next";
 
-export default function Home() {
+const Home: NextPage = () => {
   return (
     <Layout home pageTitle="Welcome!" noFooter={false}>
       <h1>
         <span className={styles.logo}>
-          <span className={styles.nobr}>{siteTitle}</span> へようこそ!
+          <span className={styles.nobr}>{Vars.siteTitle}</span> へようこそ!
         </span>
       </h1>
       <p>初めての方は...</p>
@@ -18,3 +19,5 @@ export default function Home() {
     </Layout>
   );
 }
+
+export default Home;

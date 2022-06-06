@@ -1,4 +1,4 @@
-import styles from "../styles/DarkModeButton.module.scss";
+import styles from "../styles/components/DarkModeButton.module.scss";
 import { darkModeTheme } from "../lib/themeControl";
 
 export default function DarkModeButton() {

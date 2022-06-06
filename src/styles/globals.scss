@@ -210,6 +210,7 @@ select {
   border-right: var(--theme-4) solid 2px;
   border-bottom: var(--theme-4) solid 2px;
   margin: 5px 0;
+  transition: all var(--body-transition);
 }
 
 input[type="submit"],

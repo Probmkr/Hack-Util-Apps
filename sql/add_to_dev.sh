@@ -12,7 +12,7 @@ echo $dev_sqls
 
 
 if [ $yesno ]; then
-    rm -f $(ls -l dev_sql.d | grep -E "^l" | sed -E "s/^l.+?\-> //" | sed "s/sql.d/dev_sql.d/" | xargs)
+    rm -f $(ls -l dev_sql.d | grep -E "^l" | sed -E "s/^l.+?\-> //" | sed "s/.*sql.d/dev_sql.d/" | xargs)
 fi
 
 for sql in $sqls; do
@@ -21,6 +21,6 @@ for sql in $sqls; do
     else
         echo "sql.d/$sql does not exist in dev_sql.d"
         echo "Adding sql.d/$sql to dev_sql.d"
-        ln -s /sql.d/$sql dev_sql.d/$sql
+        ln -s $(pwd)/sql.d/$sql dev_sql.d/$sql
     fi
 done
