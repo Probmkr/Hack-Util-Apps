@@ -1,5 +1,5 @@
 import React from "react";
-import Router from "next/router";
+import { Router, withRouter } from "next/router";
 import nookies from "nookies";
 import cookie from "cookie";
 import Layout from "../../components/layout";
@@ -7,8 +7,8 @@ import styles from "../../styles/pages/Form.module.scss";
 import checkIsLoggedIn from "../../lib/checkLoggedIn";
 import { GetServerSideProps, GetServerSidePropsContext } from "next";
 
-export default class AdminPage extends React.Component<
-  { isLoggedIn: boolean },
+class AdminPage extends React.Component<
+  { isLoggedIn: boolean, router: Router },
   {
     appList: [];
     isLoginFailed: boolean;
@@ -67,13 +67,13 @@ export default class AdminPage extends React.Component<
 
   componentDidMount(): void {
     if (this.state.isLoggedIn) {
-      Router.push("/admin/dashboard");
+      this.props.router.push("/admin/dashboard");
     }
   }
 
   componentDidUpdate(): void {
     if (this.state.isLoggedIn) {
-      Router.push("/admin/dashboard");
+      this.props.router.push("/admin/dashboard");
     }
   }
 
@@ -143,3 +143,5 @@ export const getServerSideProps: GetServerSideProps = async (
     };
   }
 };
+
+export default withRouter(AdminPage);
