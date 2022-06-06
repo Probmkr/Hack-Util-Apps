@@ -29,8 +29,3 @@ create table sql_admin_sessions (
   expires datetime not null
 );
 
-create table sql_admin_login_cooldowns (
-  id serial primary key,
-  ip varchar(63) not null,
-  expires datetime not null
-);

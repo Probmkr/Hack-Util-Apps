@@ -1,6 +1,6 @@
 #!/bin/bash
 
-npm i
+yarn install
 sudo yarn build
 if [ $? != "0" ]; then
     exit 1
