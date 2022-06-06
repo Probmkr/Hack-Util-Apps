@@ -1,6 +1,6 @@
 import Layout from "../../components/layout";
 
-export default function Page() {
+export default function AboutPage() {
   return (
     <Layout pageTitle="About">
       <h1>このウェブサイトについて</h1>

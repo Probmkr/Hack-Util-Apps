@@ -1,10 +1,12 @@
-import styles from "../styles/Footer.module.scss";
+import styles from "../styles/components/Footer.module.scss";
 import FooterContents from "./footerContents";
 
-export default function Footer() {
+const Footer = () => {
   return (
     <footer id="footer" className={styles.footer}>
       <FooterContents />
     </footer>
   );
 }
+
+export default Footer;

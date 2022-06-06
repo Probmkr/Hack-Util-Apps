@@ -1,10 +1,15 @@
-import styles from "../styles/Header.module.scss";
+import { NextPage } from "next";
+import styles from "../styles/components/Header.module.scss";
 import HeaderContents from "./headerContents";
 
-export default function Header(props) {
+const Header: NextPage<{
+  title: string;
+}> = ({ title }) => {
   return (
     <header id="header" className={styles.header}>
-      <HeaderContents title={props.title} />
+      <HeaderContents title={title} />
     </header>
   );
-}
+};
+
+export default Header;

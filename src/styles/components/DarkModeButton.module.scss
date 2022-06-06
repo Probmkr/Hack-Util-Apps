@@ -1,0 +1,22 @@
+.darkModeButton {
+  position: fixed;
+  right: var(--dark-mode-button-right);
+  bottom: var(--dark-mode-button-bottom);
+  width: var(--dark-mode-button-size);
+  height: var(--dark-mode-button-size);
+  // border-radius: calc(var(--dark-mode-button-size) / 2);
+  border-radius: calc((var(--dark-mode-button-size) + 10px) / 2);
+  background-color: var(--theme-reverse-1);
+  cursor: pointer;
+  user-select: none;
+  transition: width var(--dark-mode-button-transition),
+    height var(--dark-mode-button-transition), right var(--dark-mode-button-transition),
+    bottom var(--dark-mode-button-transition);
+}
+
+.darkModeButton:hover {
+  right: calc(var(--dark-mode-button-right) - 5px);
+  bottom: calc(var(--dark-mode-button-bottom) - 5px);
+  width: calc(var(--dark-mode-button-size) + 10px);
+  height: calc(var(--dark-mode-button-size) + 10px);
+}

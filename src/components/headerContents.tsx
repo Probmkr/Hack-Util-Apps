@@ -1,18 +1,18 @@
-import styles from "../styles/Header.module.scss";
-import sidebarStyles from "../styles/Sidebar.module.scss";
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import { NextPage } from "next";
+import styles from "../styles/components/Header.module.scss";
+import sidebarStyles from "../styles/components/Sidebar.module.scss";
 
-export default function HeaderContents(props) {
+const HeaderContents: NextPage<{
+  title: string;
+}> = ({ title }) => {
   return (
     <div className={styles.headerContents}>
       <HeaderLeft />
-      <HeaderMiddle title={props.title} />
+      <HeaderMiddle title={title} />
       <HeaderRight />
     </div>
   );
-}
+};
 
 function HeaderLeft() {
   return (
@@ -41,11 +41,11 @@ function HeaderRight() {
 
 function HeaderTitle(props) {
   return (
-    <Link href="#">
+    <a href="#">
       <div title="Go To Top" className={styles.headerTitle}>
         <span>{props.title}</span>
       </div>
-    </Link>
+    </a>
   );
 }
 
@@ -113,3 +113,5 @@ function sidebarToggleButtonClicked() {
   const sidebar = document.getElementById("sidebar");
   sidebar.classList.toggle(sidebarStyles.open);
 }
+
+export default HeaderContents;

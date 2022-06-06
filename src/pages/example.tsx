@@ -1,14 +1,14 @@
-import styles from "../styles/ColorTest.module.scss";
+import styles from "../styles/pages/ColorTest.module.scss";
 import Layout from "../components/layout";
 import Link from "next/link";
 import { removeClasses } from "../lib/functions";
-import { grayScaleColors } from "../env/vars.json";
+import Vars from "../env/vars";
 
 let nowBGColor: number = 0;
 
 export default function ColorTest() {
   const colorsBoxes = [];
-  grayScaleColors.forEach((color) => {
+  Vars.grayScaleColors.forEach((color) => {
     colorsBoxes.push(
       <div
         key={color}
@@ -34,7 +34,7 @@ export default function ColorTest() {
             Change background color
           </button>
           <button onClick={changeTextColor}>Change text color</button>
-          <button onClick={() => {removeClasses("body", [...grayScaleColors, "light"]);}}>Reset to default</button>
+          <button onClick={() => {removeClasses("body", [...Vars.grayScaleColors, "light"]);}}>Reset to default</button>
         </div>
         <div className={styles.colorTestBoxContainer}>{colorsBoxes}</div>
       </div>
@@ -50,22 +50,22 @@ function changeBackgroundColor() {
   nowBGColor++;
   // document
   //   .querySelector("body")
-  //   .classList.remove(...grayScaleColors);
+  //   .classList.remove(...Vars.grayScaleColors);
   // document
   //   .querySelector("header")
-  //   .classList.remove(...grayScaleColors);
-  removeClasses("body", grayScaleColors);
-  removeClasses("header", grayScaleColors);
+  //   .classList.remove(...Vars.grayScaleColors);
+  removeClasses("body", Vars.grayScaleColors);
+  removeClasses("header", Vars.grayScaleColors);
   document
     .querySelector("body")
-    .classList.add(grayScaleColors[nowBGColor % grayScaleColors.length]);
+    .classList.add(Vars.grayScaleColors[nowBGColor % Vars.grayScaleColors.length]);
   document
     .querySelector("header")
-    .classList.add(grayScaleColors[nowBGColor % grayScaleColors.length]);
+    .classList.add(Vars.grayScaleColors[nowBGColor % Vars.grayScaleColors.length]);
 }
 
 function changeBackgroundColorTo(color: string) {
-  removeClasses("body", grayScaleColors);
+  removeClasses("body", Vars.grayScaleColors);
   document.querySelector("body").classList.add(color);
 }
 

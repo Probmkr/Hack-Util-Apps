@@ -33,3 +33,5 @@ yarn-error.log*
 
 # config
 /src/env/config.json
+/src/env/config.tsx
+config.tsx

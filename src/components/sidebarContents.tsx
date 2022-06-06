@@ -1,10 +1,10 @@
 import Link from "next/link";
-import styles from "../styles/Sidebar.module.scss";
-import { sidebarContents } from "../env/vars.json";
+import styles from "../styles/components/Sidebar.module.scss";
+import Vars from "../env/vars";
 import { useRouter } from "next/router";
-const staticPagesData: object = sidebarContents.StaticPages;
+const staticPagesData: object = Vars.sidebarContents.StaticPages;
 
-export default function SidebarContents() {
+const SidebarContents = () => {
   return (
     <div className={styles.sidebarContents}>
       <SidebarLogo />
@@ -58,3 +58,5 @@ function SBNav({ children }) {
     </nav>
   );
 }
+
+export default SidebarContents;

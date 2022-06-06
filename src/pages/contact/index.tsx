@@ -1,13 +1,22 @@
 import Layout from "../../components/layout";
-import styles from "../../styles/contact/Contact.module.scss";
-import { categories } from "../../env/contactCategories.json";
+import styles from "../../styles/pages/Form.module.scss";
+import ContactCategories from "../../env/contactCategories";
 import Router from "next/router";
 import Script from "next/script";
+import hotkeys from "hotkeys-js";
+import { useEffect } from "react";
 
-export default function Page() {
+export default function ContactPage() {
+  useEffect(() => {
+    hotkeys("ctrl+enter,cmd+return", (event, handler) => {
+      event.preventDefault();
+      document.getElementById("submit").click();
+    });
+  });
+
   return (
     <Layout pageTitle="Contact">
-      <Script src="contact-script.js" strategy="afterInteractive"></Script>
+      <Script src="/script/contact/script.js" strategy="afterInteractive"></Script>
       <h1>コンタクトフォーム</h1>
       <p>何かあればお問い合わせください。</p>
       <p>
@@ -20,27 +29,25 @@ export default function Page() {
         <li>バグが発生する</li>
         <li>UI の改善案を提案する</li>
         <form
-          className={styles.contactForm}
+          className={styles.form}
           action="/api/contact-form"
           method="post"
           onSubmit={handleSubmit}
         >
-          <div className={styles.inputs}>
+          <div className={styles.input}>
             <label className={styles.required} htmlFor="name">
               ニックネーム：
             </label>
             <input type="text" name="name" id="name" maxLength={255} required />
           </div>
-          <div className={styles.inputs}>
-            <label htmlFor="email">
-              メールアドレス：
-            </label>
+          <div className={styles.input}>
+            <label htmlFor="email">メールアドレス：</label>
             <input type="email" name="email" id="email" maxLength={255} />
           </div>
-          <div className={styles.inputs}>
+          <div className={styles.input}>
             <label htmlFor="subject">カテゴリ：</label>
             <select name="category" id="category">
-              {categories.map((category) => {
+              {ContactCategories.categories.map((category) => {
                 return (
                   <option key={category.key} value={category.key}>
                     {category.name}
@@ -49,7 +56,7 @@ export default function Page() {
               })}
             </select>
           </div>
-          <div className={styles.inputs}>
+          <div className={styles.input}>
             <label className={styles.required} htmlFor="subject">
               件名：
             </label>
@@ -61,9 +68,16 @@ export default function Page() {
               required
             />
           </div>
-          <div className={styles.inputs}>
+          <div className={styles.input}>
             <label className={styles.required} htmlFor="message">
-              メッセージ：<span className={styles.messageLetterCountOuter}><span id="messageLetterCount" className={styles.messageLetterCount}></span> 文字</span>
+              メッセージ：
+              <span className={styles.messageLetterCountOuter}>
+                <span
+                  id="messageLetterCount"
+                  className={styles.messageLetterCount}
+                ></span>{" "}
+                文字
+              </span>
             </label>
             <textarea
               placeholder="3000文字以内で入力してください。"
@@ -72,7 +86,7 @@ export default function Page() {
               required
             ></textarea>
           </div>
-          <input type="submit" value="送信" className={styles.submit} />
+          <input type="submit" id="submit" value="送信" className={styles.submit} />
         </form>
       </ul>
     </Layout>
@@ -117,7 +131,7 @@ async function handleSubmit(event) {
 
   const JSONData = JSON.stringify(data);
 
-  const endpoint = "/api/contact-form";
+  const endpoint = "/api/contact";
 
   const options = {
     method: "POST",
@@ -128,9 +142,10 @@ async function handleSubmit(event) {
   };
 
   const response = await fetch(endpoint, options);
-  console.log(response);
   const result = await response.json();
-  console.log(result);
-  // Router.push("/contact/complete");
-  response.ok ? Router.push("/contact/complete") : Router.push(`/contact/error?error=${result.error}&status=${response.status}`);
+  response.ok
+    ? Router.push("/contact/complete")
+    : Router.push(
+        `/contact/error?error=${result.error}&status=${response.status}`
+      );
 }

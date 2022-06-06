@@ -1,3 +1,3 @@
-import Page from "../../template/static/page";
+import TestPage from "../../template/static/page";
 
-export default Page;
+export default TestPage;
