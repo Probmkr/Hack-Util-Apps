@@ -6,18 +6,18 @@ if [ $? != "0" ]; then
     exit 1
 fi
 
-screen -ls builded > /dev/null
+sudo screen -ls builded > /dev/null
 if [ $? == "0" ]; then
-    screen -S builded -X quit
+    sudo screen -S builded -X quit
 fi
 
 read -p "enter to continue: "
-screen -UAmdS builded sudo next start -p ${1:-80}
-screen -ls
+sudo screen -UAmdS builded next start -p ${1:-80}
+sudo screen -ls
 
 read -p "do you want to attach? (y:any): " attach
 
 if [ "$attach" == "y" ]; then
-    screen -r builded
+    sudo screen -r builded
 fi
 
