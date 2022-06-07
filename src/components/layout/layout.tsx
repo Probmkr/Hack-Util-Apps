@@ -69,7 +69,7 @@ const Layout: NextPage<{
           <meta property="og:url" content={pageURL} />
           <meta property="og:title" content={title} />
           <meta property="og:site_name" content={Vars.siteTitle} />
-          <meta property="og:description" content={description} />
+          <meta property="og:description" content={pageTitle} />
           <meta property="og:type" content="website" />
           <meta property="og:image" content={ogImageURL} />
           <meta property="og:image:width" content="1200" />
