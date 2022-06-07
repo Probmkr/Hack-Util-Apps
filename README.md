@@ -15,20 +15,29 @@ http://apps.probmkr.com:3001/
 
 まず、レポジトリをクローンします。
 
-`git clone https://github.com/Probmkr/test_next_project.git`
+```
+git clone https://github.com/Probmkr/test_next_project.git
+```
+
 （公開鍵の場合: `git clone git@github.com:Probmkr/test_next_project.git`）
 
 次に、レポジトリのディレクトリに `cd` します。
 
-`cd hack-util-apps.git`
+```
+cd hack-util-apps
+```
 
-必要な npm パッケージをインストールします。
+必要なパッケージをインストールします。（`yarn` を採用しており増すので、 npm は使わないでください。）
 
-`npm i`
+```
+yarn install
+```
 
 開発用にサーバーを起動します。
 
-`npm run dev`
+```
+yarn dev
+```
 
 これで好きなようにコードを編集してください。ブラウザでは即座に反映されます。
 
