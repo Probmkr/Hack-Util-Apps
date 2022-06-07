@@ -1,5 +1,5 @@
 import Cookies from "js-cookie";
-import Vars from "../env/vars";
+import Vars from "../../env/vars";
 
 export default function changeThemeTo(theme: string) {
   const body: HTMLElement = document.querySelector("body");
