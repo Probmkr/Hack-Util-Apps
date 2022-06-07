@@ -8,7 +8,7 @@ import adminCheckIsLoggedIn from "../../lib/auth/adminCheckLogin";
 import { GetServerSideProps, GetServerSidePropsContext } from "next";
 
 class AdminPage extends React.Component<
-  { isLoggedIn: boolean, router: Router },
+  { isLoggedIn: boolean; router: Router },
   {
     appList: [];
     isLoginFailed: boolean;
@@ -45,7 +45,7 @@ class AdminPage extends React.Component<
 
     const JSONData = JSON.stringify(data);
 
-    const endpoint = "/api/admin/login";
+    const endpoint = "/api/admin/checkLoggedIn";
 
     const options = {
       method: "POST",
@@ -54,15 +54,24 @@ class AdminPage extends React.Component<
       },
       body: JSONData,
     };
-
-    const response = await fetch(endpoint, options);
-    const result = await response.json();
-    this.setState((state) => ({
-      isLoginFailed: !result.isLoginSucceeded,
-      isLoggedIn: result.isLoginSucceeded,
-      errorName: result.error,
-      triedLogin: false,
-    }));
+    try {
+      const response = await fetch(`${endpoint}`, options);
+      const result = await response.json();
+      this.setState((state) => ({
+        isLoginFailed: !result.isLoginSucceeded,
+        isLoggedIn: result.isLoginSucceeded,
+        errorName: result.error,
+        triedLogin: false,
+      }));
+    } catch (err) {
+      console.log(err);
+      this.setState((state) => ({
+        isLoginFailed: true,
+        isLoggedIn: false,
+        errorName: err.message,
+        triedLogin: false,
+      }))
+    }
   }
 
   componentDidMount(): void {
