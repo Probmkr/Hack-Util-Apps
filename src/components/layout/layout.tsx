@@ -44,7 +44,7 @@ const Layout: NextPage<{
   const title = home ? Vars.siteTitle + " | " + Vars.defaultDescription : pageTitle + " | " + Vars.siteTitle;
   let ogImageURLTemp: string = "";
   if (ogCustomImageParam) {
-    ogImageURLTemp = "/api/ogp/" + encodeURI(ogCustomImageParam) + "?theme=" + encodeURI(ogTheme);
+    ogImageURLTemp = Config.siteHost + "/api/ogp/" + encodeURI(ogCustomImageParam) + "?theme=" + encodeURI(ogTheme);
   } else if (ogCustomImageURL) {
     ogImageURLTemp = ogCustomImageURL;
   } else {
