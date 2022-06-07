@@ -41,19 +41,10 @@ const handle = app.getRequestHandler();
       key: fs.readFileSync("./certificates/privkey.pem"),
     };
     const server = https.createServer(options, expressApp);
-    const redirectServer = https.createServer(
-      {
-        SNICallback: (domain, cb) => {
-          cb(null, options.cert);
-        },
-      },
-      (req, res) => {
-        res.writeHead(301, {
-          Location: `https://${req.headers.host}${req.url}`,
-        });
-        res.end();
-      }
-    );
+    const redirectServer = express();
+    redirectServer.get("*", (req, res) => {
+      res.redirect(`https://${req.headers.host}${req.url}`);
+    });
     redirectServer.listen(HTTPPort, () => {
       console.log(
         `Redirect server listening on port ${HTTPPort} for non-HTTPS requests`
