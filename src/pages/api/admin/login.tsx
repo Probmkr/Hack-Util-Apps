@@ -56,13 +56,6 @@ export default async function handler(
       const resetTokenSQL = "delete from sql_admin_sessions where user_id = ?";
       const insertTokenSQL =
         "insert into sql_admin_sessions (user_id, session_token, expires) values (?, ?, ?)";
-      res.setHeader(
-        "Set-Cookie",
-        cookie.serialize("loginToken", "hahaha", {
-          expires: new Date(2030, 1, 1),
-          path: "/",
-        })
-      );
       await connection.query(resetTokenSQL, [userID]);
       await connection.query(insertTokenSQL, [
         userID,
