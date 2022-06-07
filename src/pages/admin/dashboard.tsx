@@ -1,11 +1,11 @@
 import Layout from "../../components/layout";
-import parseCookie from "../../lib/parseCookie";
+import parseCookie from "../../lib/parse/parseCookie";
 import nookies from "nookies";
 import cookie from "cookie";
 import React from "react";
 import mysql from "mysql";
 import Config from "../../env/config";
-import checkIsLoggedIn from "../../lib/checkLoggedIn";
+import adminCheckIsLoggedIn from "../../lib/auth/adminCheckLogin";
 import { GetServerSideProps, GetServerSidePropsResult } from "next";
 
 export default class AdminDashboard extends React.Component<
@@ -31,7 +31,7 @@ export default class AdminDashboard extends React.Component<
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const cookies = nookies.get(context);
-  const result = await checkIsLoggedIn(cookies.AdamLT);
+  const result = await adminCheckIsLoggedIn(cookies.AdamLT);
   const isLoggedIn = await result.isLoggedIn;
   if (!isLoggedIn) {
     context.res.setHeader(

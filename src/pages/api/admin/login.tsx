@@ -4,8 +4,8 @@ import { NextApiRequest, NextApiResponse } from "next";
 import cookie from "cookie";
 import Config from "../../../env/config";
 import Vars from "../../../env/vars";
-import md5hash from "../../../lib/md5hash";
-import randomString from "../../../lib/randomString";
+import md5hash from "../../../lib/auth/md5hash";
+import randomString from "../../../lib/auth/randomString";
 import { MysqlError } from "mysql";
 
 export default async function handler(

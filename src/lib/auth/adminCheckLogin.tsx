@@ -1,7 +1,7 @@
 import mysql from "mysql2/promise";
 import cookie from "cookie";
-import Vars from "../env/vars";
-import Config from "../env/config";
+import Vars from "../../env/vars";
+import Config from "../../env/config";
 
 interface IsLoggedIn {
   isLoggedIn: boolean;
@@ -9,7 +9,7 @@ interface IsLoggedIn {
   error: string;
 }
 
-export default async function checkIsLoggedIn(loginToken) {
+export default async function adminCheckIsLoggedIn(loginToken) {
   if (
     loginToken === undefined ||
     loginToken.length !== Vars.lengthOfLoginToken
