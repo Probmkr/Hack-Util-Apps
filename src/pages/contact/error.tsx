@@ -1,4 +1,4 @@
-import Layout from "../../components/layout";
+import Layout from "../../components/layout/layout";
 import styles from "../../styles/pages/contact/Error.module.scss";
 import { useRouter } from "next/router";
 

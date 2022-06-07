@@ -1,4 +1,4 @@
-import Layout from "../../components/layout";
+import Layout from "../../components/layout/layout";
 import styles from "../../styles/pages/Form.module.scss";
 import ContactCategories from "../../env/contactCategories";
 import Router from "next/router";

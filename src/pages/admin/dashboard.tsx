@@ -1,4 +1,4 @@
-import Layout from "../../components/layout";
+import Layout from "../../components/layout/layout";
 import parseCookie from "../../lib/parse/parseCookie";
 import nookies from "nookies";
 import cookie from "cookie";

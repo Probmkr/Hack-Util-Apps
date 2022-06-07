@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import styles from "../styles/components/Header.module.scss";
+import styles from "../../styles/components/Header.module.scss";
 import HeaderContents from "./headerContents";
 
 const Header: NextPage<{

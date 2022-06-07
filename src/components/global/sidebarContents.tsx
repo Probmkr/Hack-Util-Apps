@@ -1,6 +1,6 @@
 import Link from "next/link";
-import styles from "../styles/components/Sidebar.module.scss";
-import Vars from "../env/vars";
+import styles from "../../styles/components/Sidebar.module.scss";
+import Vars from "../../env/vars";
 import { useRouter } from "next/router";
 const staticPagesData: object = Vars.sidebarContents.StaticPages;
 
