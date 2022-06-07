@@ -7,7 +7,7 @@ import Footer from "./footer";
 import DarkModeButton from "./darkModeButton";
 import Sidebar from "./sidebar";
 import styles from "../styles/components/Layout.module.scss";
-import { initialTheme } from "../lib/themeControl";
+import { initialTheme } from "../lib/dom/themeControl";
 import Vars from "../env/vars";
 import Config from "../env/config";
 import { useRouter } from "next/router";

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 yarn install
-sudo yarn build
+yarn build
 if [ $? != "0" ]; then
     exit 1
 fi
@@ -12,7 +12,7 @@ if [ $? == "0" ]; then
 fi
 
 read -p "enter to continue: "
-screen -UAmdS builded sudo next start -p ${1:-80}
+screen -UAmdS builded yarn start
 screen -ls
 
 read -p "do you want to attach? (y:any): " attach
