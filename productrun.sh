@@ -12,15 +12,15 @@ if [ $? != "0" ]; then
     exit 1
 fi
 
-screen -ls product > /dev/null
-
 read -p "enter to continue: "
+
+screen -ls product > /dev/null
 
 if [ $? == "0" ]; then
     screen -S product -X quit
 fi
 
-screen -UAmdS product yarn start
+screen -UAmdS product yarn ${1:-start:https}
 screen -ls
 
 read -p "do you want to attach? (y:any): " attach

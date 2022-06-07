@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "node ./server.js",
-    "dev:https": "sudo -H -u nodemaster bash -c 'HTTPS=true node ./server.js'",
+    "dev:https": "HTTPS=true node ./server.js",
     "build": "next build",
     "start": "NODE_ENV=production node ./server.js",
-    "start:https": "sudo -H -u nodemaster bash -c 'NODE_ENV=production node ./server.js'",
+    "start:https": "NODE_ENV=production HTTPS=true node ./server.js",
     "lint": "next lint"
   },
   "main": "server.js",
