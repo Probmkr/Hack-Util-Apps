@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ $1 == 'onlykill' ]; then
+    screen -S builded -X quit
+    screen -ls
+    exit 0
+fi
+
 yarn install
 yarn build
 if [ $? != "0" ]; then
