@@ -6,12 +6,10 @@ require("dotenv").config();
 
 const envHTTPS = process.env.HTTPS === "true";
 const isProduction = process.env.NODE_ENV === "production";
-const DevHTTPPort = (isProduction && 3080) || parseInt(process.env.DEV_HTTP_PORT, 10) || 3001;
-const DevHTTPSPort = (isProduction && 3443) || parseInt(process.env.DEV_HTTPS_PORT, 10) || 3002;
-const HTTPPort =
-  (isProduction && process.env.HTTP_PORT) || DevHTTPPort;
-const HTTPSPort =
-  (isProduction && process.env.HTTPS_PORT) || DevHTTPSPort;
+const DevHTTPPort = parseInt(process.env.DEV_HTTP_PORT, 10) || 3001;
+const DevHTTPSPort = parseInt(process.env.DEV_HTTPS_PORT, 10) || 3002;
+const HTTPPort = (isProduction && process.env.HTTP_PORT) || DevHTTPPort;
+const HTTPSPort = (isProduction && process.env.HTTPS_PORT) || DevHTTPSPort;
 const customPort = parseInt(process.env.PORT, 10);
 const port = customPort || (envHTTPS && HTTPSPort) || HTTPPort;
 const host = "0.0.0.0";
@@ -34,8 +32,10 @@ const handle = app.getRequestHandler();
   const useHTTPS = envHTTPS && hasCertificates;
 
   if (useHTTPS) {
-    const certFilePath = process.env.CERT_FILE_PATH || "./certificates/fullchain.pem";
-    const certKeyFilePath = process.env.CERT_KEY_FILE_PATH || "./certificates/privkey.pem";
+    const certFilePath =
+      process.env.CERT_FILE_PATH || "./certificates/fullchain.pem";
+    const certKeyFilePath =
+      process.env.KEY_FILE_PATH || "./certificates/privkey.pem";
 
     const options = {
       cert: fs.readFileSync("./certificates/fullchain.pem"),
