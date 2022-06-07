@@ -13,11 +13,13 @@ if [ $? != "0" ]; then
 fi
 
 screen -ls builded > /dev/null
+
+read -p "enter to continue: "
+
 if [ $? == "0" ]; then
     screen -S builded -X quit
 fi
 
-read -p "enter to continue: "
 screen -UAmdS builded yarn start
 screen -ls
 
