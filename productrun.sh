@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ $1 == 'onlykill' ]; then
-    screen -S builded -X quit
+    screen -S product -X quit
     screen -ls
     exit 0
 fi
@@ -12,20 +12,20 @@ if [ $? != "0" ]; then
     exit 1
 fi
 
-screen -ls builded > /dev/null
+screen -ls product > /dev/null
 
 read -p "enter to continue: "
 
 if [ $? == "0" ]; then
-    screen -S builded -X quit
+    screen -S product -X quit
 fi
 
-screen -UAmdS builded yarn start
+screen -UAmdS product yarn start
 screen -ls
 
 read -p "do you want to attach? (y:any): " attach
 
 if [ "$attach" == "y" ]; then
-    screen -r builded
+    screen -r product
 fi
 
