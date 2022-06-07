@@ -1,5 +1,5 @@
 import styles from "../styles/pages/ColorTest.module.scss";
-import Layout from "../components/layout";
+import Layout from "../components/layout/layout";
 import Link from "next/link";
 import removeClasses from "../lib/dom/removeClasses";
 import Vars from "../env/vars";

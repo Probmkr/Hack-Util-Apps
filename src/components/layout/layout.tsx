@@ -2,14 +2,14 @@ import Head from "next/head";
 import Script from "next/script";
 import { useEffect } from "react";
 import { NextPage } from "next";
-import Header from "./header";
-import Footer from "./footer";
-import DarkModeButton from "./darkModeButton";
-import Sidebar from "./sidebar";
-import styles from "../styles/components/Layout.module.scss";
-import { initialTheme } from "../lib/dom/themeControl";
-import Vars from "../env/vars";
-import Config from "../env/config";
+import Header from "../global/header";
+import Footer from "../global/footer";
+import DarkModeButton from "../global/darkModeButton";
+import Sidebar from "../global/sidebar";
+import styles from "../../styles/components/Layout.module.scss";
+import { initialTheme } from "../../lib/dom/themeControl";
+import Vars from "../../env/vars";
+import Config from "../../env/config";
 import { useRouter } from "next/router";
 
 const Layout: NextPage<{

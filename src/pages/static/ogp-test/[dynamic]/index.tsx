@@ -6,7 +6,7 @@ import {
 } from "next";
 import React from "react";
 import { useRouter } from "next/router";
-import Layout from "../../../../components/layout";
+import Layout from "../../../../components/layout/layout";
 
 const DynamicPage: NextPage = () => {
   const router = useRouter();

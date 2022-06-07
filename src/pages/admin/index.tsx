@@ -2,7 +2,7 @@ import React from "react";
 import { Router, withRouter } from "next/router";
 import nookies from "nookies";
 import cookie from "cookie";
-import Layout from "../../components/layout";
+import Layout from "../../components/layout/layout";
 import styles from "../../styles/pages/Form.module.scss";
 import adminCheckIsLoggedIn from "../../lib/auth/adminCheckLogin";
 import { GetServerSideProps, GetServerSidePropsContext } from "next";

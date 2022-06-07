@@ -4,7 +4,7 @@ import javascript from "highlight.js/lib/languages/javascript";
 import json from "highlight.js/lib/languages/json";
 // import "highlight.js/styles/github.css";
 import { useEffect, useState } from "react";
-import Layout from "../../../../components/layout";
+import Layout from "../../../../components/layout/layout";
 import ClipboardIcon from "../../../../components/svgs/clipboard";
 import styles from "./style.module.scss";
 
@@ -20,7 +20,7 @@ export default function YourReqHeader({ highlighted }) {
         id="requestHeader"
         dangerouslySetInnerHTML={{ __html: highlighted }}
       ></div>
-      <ClipboardIcon targetID="requestHeader" />
+      <ClipboardIcon targetID="requestHeader" thisID="forRequestHeader" />
     </Layout>
   );
 }

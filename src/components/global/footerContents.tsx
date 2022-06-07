@@ -1,6 +1,6 @@
-import styles from "../styles/components/Footer.module.scss";
+import styles from "../../styles/components/Footer.module.scss";
 import Link from "next/link";
-import changeThemeTo from "../lib/dom/themeControl";
+import changeThemeTo from "../../lib/dom/themeControl";
 
 const FooterContents = () => {
   return (

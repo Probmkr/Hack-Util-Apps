@@ -1,6 +1,6 @@
 import { NextPage } from "next";
-import styles from "../styles/components/Header.module.scss";
-import sidebarStyles from "../styles/components/Sidebar.module.scss";
+import styles from "../../styles/components/Header.module.scss";
+import sidebarStyles from "../../styles/components/Sidebar.module.scss";
 
 const HeaderContents: NextPage<{
   title: string;

@@ -1,5 +1,5 @@
 import styles from "../styles/pages/Home.module.scss";
-import Layout from "../components/layout";
+import Layout from "../components/layout/layout";
 import Vars from "../env/vars";
 import Link from "next/link";
 import { NextPage } from "next";
