@@ -34,6 +34,9 @@ const handle = app.getRequestHandler();
   const useHTTPS = envHTTPS && hasCertificates;
 
   if (useHTTPS) {
+    const certFilePath = process.env.CERT_FILE_PATH || "./certificates/fullchain.pem";
+    const certKeyFilePath = process.env.CERT_KEY_FILE_PATH || "./certificates/privkey.pem";
+
     const options = {
       cert: fs.readFileSync("./certificates/fullchain.pem"),
       key: fs.readFileSync("./certificates/privkey.pem"),
