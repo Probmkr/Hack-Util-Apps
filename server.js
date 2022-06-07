@@ -13,9 +13,7 @@ const HTTPPort =
 const HTTPSPort =
   (isProduction && process.env.HTTPS_PORT) || DevHTTPSPort;
 const customPort = parseInt(process.env.PORT, 10);
-// const port = parseInt(process.env.PORT, 10) || 3002 || isProduction || 3001;
 const port = customPort || (envHTTPS && HTTPSPort) || HTTPPort;
-// const host = process.env.HOST || "apps.probmkr.com";
 const host = "0.0.0.0";
 
 const app = next({
