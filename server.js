@@ -5,9 +5,9 @@ const fs = require("fs");
 require("dotenv").config();
 
 const envHTTPS = process.env.HTTPS === "true";
-const DevHTTPPort = parseInt(process.env.DEV_HTTP_PORT, 10) || 3001;
-const DevHTTPSPort = parseInt(process.env.DEV_HTTPS_PORT, 10) || 3002;
 const isProduction = process.env.NODE_ENV === "production";
+const DevHTTPPort = (isProduction && 3080) || parseInt(process.env.DEV_HTTP_PORT, 10) || 3001;
+const DevHTTPSPort = (isProduction && 3443) || parseInt(process.env.DEV_HTTPS_PORT, 10) || 3002;
 const HTTPPort =
   (isProduction && process.env.HTTP_PORT) || DevHTTPPort;
 const HTTPSPort =
