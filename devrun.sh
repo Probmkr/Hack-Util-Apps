@@ -1,5 +1,6 @@
 #!/bin/bash
 
+yarn install
 screen -ls dev > /dev/null
 if [ $? == 0 ]; then
     screen -S dev -X quit

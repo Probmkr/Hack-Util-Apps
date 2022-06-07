@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 interface MyConfig {
   siteHost: string;
   siteFDQN: string;
@@ -17,6 +19,14 @@ interface MyConfig {
   develop: boolean;
   developError: boolean;
 }
+
+// I reccomand using this config for siteHost
+// この設定方法を siteHost 用に使うのをお勧めします。
+//
+// const isHTTPS = process.env.HTTPS === "true";
+// {
+//   siteHost: `http${isHTTPS ? "s" : ""}://${process.env.HOST}`,
+// }
 
 const Config: MyConfig = {
   siteHost: "http://example.com",
