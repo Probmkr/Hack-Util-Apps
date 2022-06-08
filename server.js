@@ -25,7 +25,7 @@ const handle = app.getRequestHandler();
   await app.prepare();
   const expressApp = express();
 
-  expressApp.get("*", (req, res) => handle(req, res));
+  expressApp.all("*", (req, res) => handle(req, res));
 
   const hasCertificates =
     fs.existsSync("./certificates/fullchain.pem") &&
@@ -45,7 +45,7 @@ const handle = app.getRequestHandler();
     };
     const server = https.createServer(options, expressApp);
     const redirectServer = express();
-    redirectServer.get("*", (req, res) => {
+    redirectServer.all("*", (req, res) => {
       res.redirect(`https://${req.headers.host}${req.url}`);
     });
     redirectServer.listen(HTTPPort, () => {
