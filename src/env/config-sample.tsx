@@ -38,7 +38,7 @@ const Config: MyConfig = {
     host: "localhost",
     user: "user",
     password: "pass",
-    database: "user",
+    database: "hua",
   },
   mysqlDevConnect: {
     // 開発環境ようの MySQL の接続設定を書いてください。
@@ -46,7 +46,7 @@ const Config: MyConfig = {
     host: "localhost",
     user: "user",
     password: "pass",
-    database: "user",
+    database: "hua_dev",
   },
   // develop が true になっているときに mysqlDevConnect が
   // mysqlConnect の代わりに使われます。

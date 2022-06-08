@@ -38,7 +38,7 @@ const Config: MyConfig = {
     host: "localhost",
     user: "user",
     password: "pass",
-    database: "user",
+    database: "hua",
   },
   mysqlDevConnect: {
     // Set your MySQL connection settings for develop mode.
@@ -46,7 +46,7 @@ const Config: MyConfig = {
     host: "localhost",
     user: "user",
     password: "pass",
-    database: "user",
+    database: "hua_dev",
   },
   // Set develop mode.
   // If develop is true, mysqlDevConnect will be used instead of mysqlConnect.
