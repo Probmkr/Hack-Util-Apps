@@ -45,7 +45,7 @@ class AdminPage extends React.Component<
 
     const JSONData = JSON.stringify(data);
 
-    const endpoint = "/api/admin/checkLoggedIn";
+    const endpoint = "/api/admin/login";
 
     const options = {
       method: "POST",
