@@ -9,6 +9,7 @@ export default function Apps() {
       <Link href="/apps/2022/your-ip">あなたの IP アドレス</Link>
       <Link href="/apps/2022/your-req-header">あなたのリクエストヘッダー</Link>
       <Link href="/apps/2022/ping">Ping を実行</Link>
+      <Link href="/apps/2022/caesar">Caesar 暗号解読機</Link>
     </Layout>
   );
 }
