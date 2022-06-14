@@ -16,7 +16,8 @@ export default async function handler(
     const body = req.body;
     const badIP = "Bad IP";
     const ip = requestIp.getClientIp(req);
-    const ipReg = /.*192\.168\.3.*/;
+    // const ipReg = /.*192\.168\.3.*/;
+    const ipReg = /.*/;
     if (!ipReg.test(ip)) {
       return res
         .status(400)
