@@ -67,9 +67,13 @@ const Vars: MyVars = {
         title: "Contact",
       },
       ColorTestPage: {
-        url: "/example",
+        url: "/static/example",
         title: "Color Test",
       },
+      FontTestPage: {
+        url: "/static/font",
+        title: "Font Test"
+      }
     },
     PopularApps: false,
     Categories: false,
