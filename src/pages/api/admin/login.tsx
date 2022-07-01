@@ -61,10 +61,10 @@ export default async function handler(
       await connection.query(insertTokenSQL, [
         userID,
         loginToken,
-        new Date(Date.now() + 60 * 60 * 1000),
+        new Date(Date.now() + 60 * 60 * 60 * 365),
       ]);
       const cookieOptions = {
-        expires: new Date(Date.now() + 60 * 60 * 1000),
+        expires: new Date(Date.now() + 60 * 60 * 60 * 365),
         httpOnly: true,
         sameSite: "strict",
         path: "/",

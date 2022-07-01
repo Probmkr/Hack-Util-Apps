@@ -279,7 +279,7 @@ pre,
   margin: 4px 0;
   white-space: pre-wrap;
   width: 100%;
-  transition: all var(--body-transition);
+  transition: background-color var(--body-transition), border var(--body-transition);
   font-family: "Courier New", Courier, monospace;
   overflow-x: scroll;
 }

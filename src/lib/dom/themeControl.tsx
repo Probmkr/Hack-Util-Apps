@@ -5,7 +5,7 @@ export default function changeThemeTo(theme: string) {
   const body: HTMLElement = document.querySelector("body");
   body.classList.remove(...Vars.siteThemes);
   body.classList.add(theme);
-  Cookies.set("theme", theme, { sameSite: "lax" });
+  Cookies.set("theme", theme, { sameSite: "lax", expires: 365 });
   // toggleJapanTheme();
 }
 

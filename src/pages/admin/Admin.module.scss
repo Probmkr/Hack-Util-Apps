@@ -1,0 +1,50 @@
+.main {
+  --tab-border-width: 1px;
+  --tab-border-radius: 6px;
+  padding: 6px;
+
+  p {
+    text-align: start;
+  }
+
+  .tabList {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    ul {
+      display: flex;
+      flex-direction: row;
+
+      li {
+        border: black solid var(--tab-border-width);
+        margin-left: calc(var(--tab-border-width) * -1);
+        border-radius: var(--tab-border-radius) var(--tab-border-radius) 0 0;
+        padding: 5px;
+        background-color: var(--gray-1);
+        cursor: pointer;
+      }
+
+      li.selected {
+        border-radius: 0;
+      }
+
+      li:hover {
+        background-color: var(--gray-2);
+        border-radius: 0;
+      }
+    }
+  }
+
+  .tabWindows {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: calc(var(--tab-border-width) * -1);
+    margin-top: calc(var(--tab-border-width) * -1);
+    border: black solid var(--tab-border-width);
+  }
+}
