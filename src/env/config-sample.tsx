@@ -5,25 +5,7 @@
 ////////////////////////////////////////////////////////////////////
 
 // Config オブジェクトの型定義
-interface MyConfig {
-  siteHost: string;
-  siteFDQN: string;
-  certDir: string;
-  mysqlConnect: {
-    host: string;
-    user: string;
-    password: string;
-    database: string;
-  };
-  mysqlDevConnect: {
-    host: string;
-    user: string;
-    password: string;
-    database: string;
-  };
-  develop: boolean;
-  developError: boolean;
-}
+import { MyConfig } from './config.d';
 
 // Config オブジェクト本体
 const Config: MyConfig = {

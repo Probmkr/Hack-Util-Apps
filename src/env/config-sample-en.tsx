@@ -5,25 +5,7 @@
 /////////////////////////////////////////
 
 // type of Config Object
-interface MyConfig {
-  siteHost: string;
-  siteFDQN: string;
-  certDir: string;
-  mysqlConnect: {
-    host: string;
-    user: string;
-    password: string;
-    database: string;
-  };
-  mysqlDevConnect: {
-    host: string;
-    user: string;
-    password: string;
-    database: string;
-  };
-  develop: boolean;
-  developError: boolean;
-}
+import { MyConfig } from "./config.d";
 
 // Config Object
 const Config: MyConfig = {
