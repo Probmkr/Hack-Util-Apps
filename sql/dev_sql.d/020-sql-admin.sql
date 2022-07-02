@@ -1,1 +1,1 @@
-/home/thanatos/Documents/repos/other/Node/Next/test_project/sql/sql.d/020-sql-admin.sql
+../sql.d/020-sql-admin.sql

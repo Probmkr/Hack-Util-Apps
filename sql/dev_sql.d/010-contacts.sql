@@ -1,1 +1,1 @@
-/home/thanatos/Documents/repos/other/Node/Next/test_project/sql/sql.d/010-contacts.sql
+../sql.d/010-contacts.sql
