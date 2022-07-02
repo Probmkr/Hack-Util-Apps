@@ -19,7 +19,7 @@ const DevelopersPage: NextPage<{}, {}> = () => {
 
 const getDevelopersDOM = () => {
   const developers = Developers.map((developer) => (
-    <div key={developer.cord} className={styles.developerCard}>
+    <div key={developer.code} className={styles.developerCard}>
       <div className={styles.header}>
         <div className={styles.icon}>
           <Image

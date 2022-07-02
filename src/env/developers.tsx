@@ -6,7 +6,7 @@ interface CustomLink {
 
 interface Developer {
   name: string;
-  cord: string;
+  code: string;
   icon: string;
   email?: string;
   SNSIcons?: {
@@ -26,7 +26,7 @@ interface Developer {
 const Developers: Developer[] = [
   {
     name: "Probm™",
-    cord: "probm",
+    code: "probm",
     icon: "https://pbs.twimg.com/profile_images/1528217514294902785/V_XVM39e_400x400.jpg",
     email: "thanatos@probmkr.com",
     SNSIcons: {
