@@ -66,6 +66,10 @@ const Vars: MyVars = {
         url: "/contact",
         title: "Contact",
       },
+      Developers: {
+        url: "/static/developers",
+        title: "Developers",
+      },
       ColorTestPage: {
         url: "/static/example",
         title: "Color Test",

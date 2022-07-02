@@ -39,38 +39,6 @@
               margin-left: 0.5rem;
               cursor: pointer;
               user-select: none;
-
-              svg {
-                padding: 4px;
-                width: 40px;
-                height: 40px;
-                border-radius: 5px;
-                transition: fill var(--footer-transition), background-color var(--footer-transition);
-                fill: var(--theme-reverse-2);
-              }
-
-              svg:hover {
-                fill: var(--theme-2);
-                background-color: var(--theme-reverse-2);
-              }
-            }
-
-            li.SNSTwitter {
-              .SNSTwitterIcon {
-                fill-rule: evenodd;
-                clip-rule: evenodd;
-                stroke-linejoin: round;
-                stroke-miterlimit: 2;
-
-                rect {
-                  fill: none;
-                }
-
-                path {
-                  // fill: #1da1f2;
-                  fill-rule: nonzero;
-                }
-              }
             }
           }
         }

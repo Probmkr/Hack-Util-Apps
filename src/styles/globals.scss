@@ -12,6 +12,7 @@
   --footer-transition: 0.3s;
   --footer-height: 100px;
   --user-icon-size: 36px;
+  --developer-card-width: 350px;
   --opacity: 1;
   --true-white: #fff;
   --true-black: #000;
@@ -33,9 +34,9 @@
   --link-visited: #a48b00;
   --link-hover: #09366e;
   --theme-1: var(--true-white);
-  --theme-2: var(--gray-1);
-  --theme-3: var(--gray-2);
-  --theme-4: var(--gray-3);
+  --theme-2: var(--light);
+  --theme-3: var(--gray-1);
+  --theme-4: var(--gray-2);
   --theme-dark-1: var(--gray-3);
   --theme-dark-2: var(--gray-2);
   --theme-dark-3: var(--gray-1);
@@ -54,7 +55,7 @@
 #bgContainer {
   color: var(--text-color);
   background-color: var(--theme-1);
-  transition: color var(--body-transition),
+  transition: color ease var(--body-transition),
     background-color ease var(--body-transition),
     border-color var(--body-transition);
 }
@@ -279,7 +280,8 @@ pre,
   margin: 4px 0;
   white-space: pre-wrap;
   width: 100%;
-  transition: background-color var(--body-transition), border var(--body-transition);
+  transition: background-color var(--body-transition),
+    border var(--body-transition);
   font-family: "Courier New", Courier, monospace;
   overflow-x: scroll;
 }
@@ -413,7 +415,7 @@ pre,
   background-color: var(--gray-5);
 }
 
-// # mouseover window
+// ## mouseover window
 
 .mouseover-trigger {
   position: relative;
@@ -473,6 +475,48 @@ pre,
 
   .svg-clipboard-message {
     color: var(--theme-reverse-2);
+  }
+}
+
+.sns-icon {
+  padding: 4px;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  transition: fill var(--footer-transition),
+    background-color var(--footer-transition);
+  fill: var(--theme-reverse-2);
+}
+
+.sns-twitter {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  stroke-linejoin: round;
+  stroke-miterlimit: 2;
+
+  rect {
+    fill: none;
+  }
+
+  path {
+    // fill: #1da1f2;
+    fill-rule: nonzero;
+  }
+}
+
+.sns-icon:hover {
+  fill: var(--theme-2);
+  background-color: var(--theme-reverse-2);
+}
+
+.sns-icon-list {
+  display: flex;
+  justify-content: flex-end;
+
+  li {
+    margin-left: 0.5rem;
+    cursor: pointer;
+    user-select: none;
   }
 }
 

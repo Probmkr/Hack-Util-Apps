@@ -1,0 +1,109 @@
+.h1 {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.developers {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .developerCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: var(--developer-card-width);
+    height: 100%;
+    transition: background-color var(--body-transition) ease,
+      box-shadow var(--body-transition) ease;
+    background-color: var(--theme-3);
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px var(--theme-4);
+    margin: 0 40px;
+    margin-bottom: 40px;
+    padding: 20px;
+
+    hr {
+      width: 100%;
+      background-color: var(--theme-4);
+      color: rgba(0, 0, 0, 0);
+      height: 2px;
+      border-radius: 1px;
+      transition: background-color var(--body-transition) ease;
+    }
+
+    .header {
+      display: flex;
+
+      .content {
+        padding-left: 10px;
+
+        .name {
+          font-size: 1.4em;
+          padding-left: 10px;
+          margin-bottom: 5px;
+        }
+      }
+
+      .icon img {
+        border-radius: 10px;
+        min-width: 80px;
+      }
+    }
+
+    .SNSIcons {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .SNSIcon {
+        margin: 0 5px;
+        margin-top: 5px;
+      }
+    }
+
+    .body {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+
+      .title {
+        font-size: 1.2em;
+        margin: 3px 0 5px 0;
+      }
+
+      .skills {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+
+        .skillList {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+          margin-bottom: 10px;
+
+          li {
+            font-size: 1em;
+            margin-right: 10px;
+          }
+        }
+      }
+
+      .links {
+        .link {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}

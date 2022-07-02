@@ -4,8 +4,6 @@ import parseCookie from "../../lib/parse/parseCookie";
 import nookies from "nookies";
 import cookie from "cookie";
 import React from "react";
-import mysql from "mysql2/promise";
-import Config from "../../env/config";
 import adminCheckIsLoggedIn from "../../lib/auth/adminCheckLogin";
 import { GetServerSideProps, GetServerSidePropsResult, NextPage } from "next";
 
