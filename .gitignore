@@ -39,3 +39,7 @@ config.tsx
 
 # ssl keys
 .pem
+
+# sqls
+/sql/all.sql
+/sql/dev_all.sql
