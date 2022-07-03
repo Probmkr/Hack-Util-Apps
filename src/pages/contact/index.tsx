@@ -1,12 +1,20 @@
 import Layout from "../../components/layout/layout";
 import styles from "../../styles/pages/Form.module.scss";
-import ContactCategories from "../../env/contactCategories";
+
+import Config from "../../env/config";
 import Router from "next/router";
 import Script from "next/script";
 import hotkeys from "hotkeys-js";
 import { useEffect } from "react";
+import { GetServerSideProps, NextPage } from "next";
+import mysql from "mysql2/promise";
+import ContactCategory from "./contactCategory.d";
 
-export default function ContactPage() {
+// export default function ContactPage()
+const ContactPage: NextPage<{
+  categories: ContactCategory[];
+  error: string | boolean;
+}> = ({ categories, error }) => {
   useEffect(() => {
     hotkeys("ctrl+enter,cmd+return", (event, handler) => {
       event.preventDefault();
@@ -16,7 +24,10 @@ export default function ContactPage() {
 
   return (
     <Layout pageTitle="Contact">
-      <Script src="/script/contact/script.js" strategy="afterInteractive"></Script>
+      <Script
+        src="/script/contact/script.js"
+        strategy="afterInteractive"
+      ></Script>
       <h1>コンタクトフォーム</h1>
       <p>何かあればお問い合わせください。</p>
       <p>
@@ -47,10 +58,10 @@ export default function ContactPage() {
           <div className={styles.input}>
             <label htmlFor="subject">カテゴリ：</label>
             <select name="category" id="category">
-              {ContactCategories.categories.map((category) => {
+              {categories.map((category) => {
                 return (
-                  <option key={category.key} value={category.key}>
-                    {category.name}
+                  <option key={category.code} value={category.id}>
+                    {category.name_ja}
                   </option>
                 );
               })}
@@ -86,12 +97,17 @@ export default function ContactPage() {
               required
             ></textarea>
           </div>
-          <input type="submit" id="submit" value="送信" className={styles.submit} />
+          <input
+            type="submit"
+            id="submit"
+            value="送信"
+            className={styles.submit}
+          />
         </form>
       </ul>
     </Layout>
   );
-}
+};
 
 async function handleSubmit(event) {
   event.preventDefault();
@@ -149,3 +165,49 @@ async function handleSubmit(event) {
         `/contact/error?error=${result.error}&status=${response.status}`
       );
 }
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const connection = await mysql.createConnection(
+    Config.develop ? Config.mysqlDevConnect : Config.mysqlConnect
+  );
+  const querySQL = "select * from contact_categories";
+  let categories: ContactCategory[] = [];
+  let error = false;
+  try {
+    const [rows] = (await connection.execute(
+      querySQL
+    )) as mysql.RowDataPacket[];
+    console.log(rows);
+    categories = rows.map((row) => {
+      return {
+        id: row.category_id,
+        code: row.category_code,
+        name_ja: row.category_name_jp,
+        name_en: row.category_name_en,
+      };
+    });
+  } catch (error) {
+    console.error(error);
+    error = true;
+  } finally {
+    connection.end();
+  }
+  if (!error) {
+    console.log(categories[0].id);
+    return {
+      props: {
+        categories,
+        error: false,
+      },
+    };
+  } else {
+    return {
+      props: {
+        categories: [],
+        error: "Categories load failed.",
+      },
+    };
+  }
+};
+
+export default ContactPage;

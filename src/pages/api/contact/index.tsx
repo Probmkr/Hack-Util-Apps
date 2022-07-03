@@ -44,7 +44,7 @@ export default async function handler(
   await connection.connect();
   try {
     const [results, fields] = await connection.query(
-      "insert into contacts (name, email, category, subject, message, ip) values (?, ?, ?, ?, ?, ?)",
+      "insert into contacts (name, email, category_id, subject, message, ip) values (?, ?, ?, ?, ?, ?)",
       [body.name, body.email, body.category, body.subject, body.message, ip]
     );
     res.status(200).json({ message: sentMessage });
