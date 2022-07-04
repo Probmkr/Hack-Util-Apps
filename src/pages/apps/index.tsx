@@ -37,13 +37,13 @@ const getStaticProps: GetStaticProps<{
       // delete require.cache[require.resolve("./" + appDataFile)];
       // const importPath = "./2022/caesar/data";
       // const appData = require(importPath).AppData;
+      console.log(importPath);
       const appData = await import(`${importPath}`).then((mod) => mod.AppData);
       console.log(importPath.constructor.name);
-      // const appData = require("./2022/caesar/data").AppData;
+      // const appData = await import("./2022/caesar/data").then((mod) => mod.AppData);
       // console.log(importPath === "./2022/caesar/data");
       console.log(appData);
       // const appData = {} as MyAppData;
-      console.log(importPath);
       return {
         app_code: appDataFile.split("/").pop(),
         app_path: path.dirname(appDataFile),
