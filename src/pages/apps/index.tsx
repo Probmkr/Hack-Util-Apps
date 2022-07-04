@@ -51,7 +51,7 @@ const getStaticProps: GetStaticProps<{
       };
     })
   );
-  console.log("fuck");
+  console.log("debug end");
   return {
     props: {
       appProps: appProps,
