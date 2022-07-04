@@ -33,17 +33,9 @@ const getStaticProps: GetStaticProps<{
   const appProps: MyAppProps[] = await Promise.all(
     appDirs.map(async (appDataFile) => {
       const importPath = `./${appDataFile.replace(/\.ts$/, "")}`;
-      // const importPath = `./${appDataFile}`;
-      // delete require.cache[require.resolve("./" + appDataFile)];
-      // const importPath = "./2022/caesar/data";
-      // const appData = require(importPath).AppData;
       console.log(importPath);
       const appData = await import(`${importPath}`).then((mod) => mod.AppData);
-      console.log(importPath.constructor.name);
-      // const appData = await import("./2022/caesar/data").then((mod) => mod.AppData);
-      // console.log(importPath === "./2022/caesar/data");
       console.log(appData);
-      // const appData = {} as MyAppData;
       return {
         app_code: appDataFile.split("/").pop(),
         app_path: path.dirname(appDataFile),
