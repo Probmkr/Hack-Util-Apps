@@ -1,17 +1,17 @@
 create table if not exists contact_categories (
   category_id serial primary key,
   category_code varchar(255) not null,
-  category_name_jp varchar(255) not null,
+  category_name_ja varchar(255) not null,
   category_name_en varchar(255) not null
 );
 
 alter table contact_categories
   modify column category_id serial,
   modify column category_code varchar(255) unique not null,
-  modify column category_name_jp varchar(255) not null,
+  modify column category_name_ja varchar(255) not null,
   modify column category_name_en varchar(255) not null;
 
-insert into contact_categories (category_code, category_name_jp, category_name_en) values (
+insert into contact_categories (category_code, category_name_ja, category_name_en) values (
   'others',
   'その他',
   'others'
