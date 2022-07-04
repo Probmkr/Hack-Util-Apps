@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "node ./server.js",
-    "dev:https": "HTTPS=true node ./server.js",
+    "dev:https": "HTTPS=true node --trace-deprecation ./server.js",
     "build": "next build",
     "start": "NODE_ENV=production node ./server.js",
     "start:https": "NODE_ENV=production HTTPS=true node ./server.js",
@@ -22,6 +22,7 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "fs": "^0.0.1-security",
+    "globby": "^13.1.2",
     "highlight.js": "^11.5.1",
     "hotkeys-js": "^3.9.4",
     "https": "^1.0.0",

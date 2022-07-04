@@ -12,7 +12,9 @@ export default function YourIP({ ip, headers }) {
 }
 
 export function getServerSideProps(context) {
-  const ip = context.req.headers["x-forwarded-for"] || context.req.connection.remoteAddress;
+  const ip =
+    context.req.headers["x-forwarded-for"] ||
+    context.req.connection.remoteAddress;
   const headers = context.req.headers;
   return { props: { ip, headers } };
 }

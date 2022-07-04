@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "public/script/contact/script.js",
+    "public/script/contact/script.js", "script/register-apps.js",
   ],
   "exclude": [
     "node_modules"
