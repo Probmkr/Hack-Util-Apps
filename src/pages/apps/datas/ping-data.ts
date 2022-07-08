@@ -1,0 +1,1 @@
+../../app-dir/2022/ping/ping-data.ts

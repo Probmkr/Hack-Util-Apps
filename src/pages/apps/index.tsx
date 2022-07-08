@@ -7,7 +7,7 @@ import { MyAppData, MyAppProps } from "../../types/app-data/app-data.d";
 import dynamic from "next/dynamic";
 
 const Apps: NextPage<{ appProps: MyAppProps[] }> = ({ appProps }) => {
-  // console.log(appProps);
+  console.log(appProps);
   // console.log(require.cache);
   return (
     <Layout pageTitle="Apps">
@@ -26,7 +26,7 @@ const getStaticProps: GetStaticProps<{
 }> = async () => {
   const CWD = path.join(process.cwd(), "src/pages/apps");
   console.log(CWD);
-  const appDirs = await globby(["*/*/data.ts"], {
+  const appDirs = await globby(["datas/*data.ts"], {
     cwd: CWD,
   });
   console.log("debug start", appDirs);
