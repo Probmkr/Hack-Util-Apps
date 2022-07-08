@@ -13,10 +13,10 @@ const Apps: NextPage<{ appProps: MyAppProps[] }> = ({ appProps }) => {
     <Layout pageTitle="Apps">
       <h1>全アプリ一覧</h1>
       <p>今はまだ作成途中なので IP を表示する超簡単なアプリをどうぞ</p>
-      <Link href="/apps/2022/your-ip">あなたの IP アドレス</Link>
-      <Link href="/apps/2022/your-req-header">あなたのリクエストヘッダー</Link>
-      <Link href="/apps/2022/ping">Ping を実行</Link>
-      <Link href="/apps/2022/caesar">Caesar 暗号解読機</Link>
+      <Link href="/app-dir/2022/your-ip">あなたの IP アドレス</Link>
+      <Link href="/app-dir/2022/your-req-header">あなたのリクエストヘッダー</Link>
+      <Link href="/app-dir/2022/ping">Ping を実行</Link>
+      <Link href="/app-dir/2022/caesar">Caesar 暗号解読機</Link>
     </Layout>
   );
 };
