@@ -182,7 +182,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
       return {
         id: row.category_id,
         code: row.category_code,
-        name_ja: row.category_name_jp,
+        name_ja: row.category_name_ja,
         name_en: row.category_name_en,
       };
     });

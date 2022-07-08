@@ -1,6 +1,7 @@
 #!/bin/bash
 
 yarn install
+./appdata.sh
 screen -ls dev > /dev/null
 if [ $? == 0 ]; then
     screen -S dev -X quit

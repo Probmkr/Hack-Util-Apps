@@ -13,7 +13,7 @@ const getContacts = async (): Promise<{
     Config.develop ? Config.mysqlDevConnect : Config.mysqlConnect
   );
   try {
-    const [rows, fields] = await connection.query("select * from contacts");
+    const [rows, fields] = await connection.query("select name, email, category_code, subject, message from contacts inner join contact_categories using(category_id)");
     return { success: true, error: "", contacts: rows };
   } catch (err) {
     return { success: false, error: err.message, contacts: [] };

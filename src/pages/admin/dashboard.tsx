@@ -33,7 +33,7 @@ const Contacts: React.FC<{
       <tr key={contact.id}>
         <td>{contact.name}</td>
         <td>{contact.email}</td>
-        <td>{contact.category}</td>
+        <td>{contact.category_code}</td>
         <td>{contact.subject}</td>
         <td>{contact.message}</td>
       </tr>
@@ -54,7 +54,7 @@ const Contacts: React.FC<{
       </button>
       <table>
         <tbody>
-          <tr>
+          <tr key="tr">
             <th>Name</th>
             <th>Email</th>
             <th>Category</th>
@@ -126,25 +126,27 @@ const AdminDashboard: NextPage<
     setInfo: React.Dispatch<React.SetStateAction<string>>;
   }>;
   return (
-    <div id="main" className={styles.main}>
-      <h1>Dashboard</h1>
-      <div className={styles.tabList}>
-        <ul>
-          {tabList.map((tab) => (
-            <li
-              className={tab === currentTab ? styles.selected : null}
-              key={tab}
-              onClick={() => changeTab(tab, setCurrentTab)}
-            >
-              {tab}
-            </li>
-          ))}
-        </ul>
+    <Layout pageTitle="Admin Dashboard">
+      <div id="main" className={styles.main}>
+        <h1>Dashboard</h1>
+        <div className={styles.tabList}>
+          <ul>
+            {tabList.map((tab) => (
+              <li
+                className={tab === currentTab ? styles.selected : null}
+                key={tab}
+                onClick={() => changeTab(tab, setCurrentTab)}
+              >
+                {tab}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className={styles.tabWindows}>
+          <Tab info={info} setInfo={setInfo} key={currentTab} />
+        </div>
       </div>
-      <div className={styles.tabWindows}>
-        <Tab info={info} setInfo={setInfo} />
-      </div>
-    </div>
+    </Layout>
   );
 };
 
