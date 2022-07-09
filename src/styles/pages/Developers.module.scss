@@ -16,8 +16,8 @@
     justify-content: center;
     max-width: var(--developer-card-width);
     height: 100%;
-    transition: background-color var(--body-transition) ease,
-      box-shadow var(--body-transition) ease;
+    transition: background-color var(--body-transition),
+      box-shadow var(--body-transition);
     background-color: var(--theme-3);
     border-radius: 20px;
     box-shadow: 10px 10px 10px var(--theme-4);
@@ -31,7 +31,7 @@
       color: rgba(0, 0, 0, 0);
       height: 2px;
       border-radius: 1px;
-      transition: background-color var(--body-transition) ease;
+      transition: background-color var(--body-transition);
     }
 
     .header {

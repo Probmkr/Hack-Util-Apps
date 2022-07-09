@@ -24,6 +24,7 @@
         padding: 5px;
         background-color: var(--theme-3);
         cursor: pointer;
+        transition: background-color var(--body-transition);
       }
 
       li.selected {
