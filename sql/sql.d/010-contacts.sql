@@ -34,7 +34,7 @@ insert into contact_categories (category_code, category_name_ja, category_name_e
 );
 
 create table if not exists contacts (
-  id int unsigned not null primary key auto_increment,
+  id int serial primary key,
   name varchar(255) not null,
   email varchar(255) not null,
   category_id bigint unsigned not null,

@@ -93,12 +93,9 @@ const getContacts = async (
   try {
     const response = await fetch(endpoint, options);
     const json = await response.json();
-    // console.log("result:", json);
     setInfo({ contacts: json.contacts });
-    // console.log(info.contacts);
     return json;
   } catch (err) {
-    // console.log("err:", err);
   }
 };
 
