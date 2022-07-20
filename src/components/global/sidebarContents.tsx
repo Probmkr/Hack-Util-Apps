@@ -15,6 +15,7 @@ const SidebarContents = () => {
   );
 }
 
+// 後で Hack Util Apps を Vars から参照するように変更する。
 function SidebarLogo() {
   return (
     <div className={styles.sidebarLogo}>
