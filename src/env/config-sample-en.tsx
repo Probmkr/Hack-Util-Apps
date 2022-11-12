@@ -9,10 +9,6 @@ import { MyConfig } from "./config.d";
 
 // Config Object
 const Config: MyConfig = {
-  // Set your site host with http:// or https://
-  siteHost: "http://localhost",
-  // Set your site FDQN without http:// or https://
-  siteFDQN: "localhost",
   // This setting will not be used now.
   certDir: "Your HTTPS certificate directory",
   mysqlConnect: {

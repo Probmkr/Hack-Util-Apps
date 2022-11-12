@@ -9,10 +9,8 @@ import { MyConfig } from './config.d';
 
 // Config オブジェクト本体
 const Config: MyConfig = {
-  // サイトのホストを http:// と https:// をつけて指定します。
-  siteHost: "http://localhost",
   // サイトの FDQN を http:// または https:// をつけないで指定します。
-  siteFDQN: "localhost",
+
   // 証明書のディレクトリを指定します。今は使われていません。
   certDir: "Your HTTPS certificate directory",
   mysqlConnect: {

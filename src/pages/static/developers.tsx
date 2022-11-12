@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import Layout from "../../components/layout/layout";
 import Developers from "../../env/developers";
 import styles from "../../styles/pages/Developers.module.scss";
@@ -22,12 +23,14 @@ const getDevelopersDOM = () => {
     <div key={developer.cord} className={styles.developerCard}>
       <div className={styles.header}>
         <div className={styles.icon}>
-          <Image
-            width={iconSize}
-            height={iconSize}
-            src={developer.icon}
-            alt={`${developer.name}'s icon image`}
-          />
+          <Link href={developer.icon} className="button">
+            <Image
+              width={iconSize}
+              height={iconSize}
+              src={developer.icon}
+              alt={`${developer.name}'s icon image`}
+            />
+          </Link>
         </div>
         <div className={styles.content}>
           <div className={styles.name}>{developer.name}</div>
@@ -37,8 +40,6 @@ const getDevelopersDOM = () => {
       <div className={styles.SNSIcons}>
         {Object.keys(developer.SNSIcons).map((key) => {
           if (developer.SNSIcons[key]) {
-            console.log(key);
-            console.log(SocialIcons[key]);
             return (
               <div className={styles.SNSIcon}>
                 <a

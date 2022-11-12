@@ -19,13 +19,13 @@ const host = "0.0.0.0";
 const app = next({
   dev: !isProduction,
 });
-const handle = app.getRequestHandler();
+const nextHandler = app.getRequestHandler();
 
 (async () => {
   await app.prepare();
   const expressApp = express();
 
-  expressApp.all("*", (req, res) => handle(req, res));
+  expressApp.all("*", (req, res) => nextHandler(req, res));
 
   const hasCertificates =
     fs.existsSync("./certificates/fullchain.pem") &&
