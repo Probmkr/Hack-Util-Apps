@@ -18,7 +18,6 @@ interface Developer {
   linkedin?: string;
   instagram?: string;
   description: string;
-  iconLink?: string;
   skills?: string[];
   otherLinks?: CustomLink[];
 }
@@ -27,14 +26,15 @@ const Developers: Developer[] = [
   {
     name: "Probm™",
     cord: "probm",
-    icon: "https://pbs.twimg.com/profile_images/1528217514294902785/V_XVM39e_400x400.jpg",
+    // icon: "https://pbs.twimg.com/profile_images/1528217514294902785/V_XVM39e_400x400.jpg",
+    icon: "https://pbs.twimg.com/profile_images/1590616602403561472/v9xzHU2h_400x400.jpg",
     email: "thanatos@probmkr.com",
     SNSIcons: {
       github: "https://github.com/probmkr",
       twitter: "https://twitter.com/probmkrnew",
       website: "https://probmkr.com",
     },
-    description: "このアプリの開発リーダー",
+    description: "このアプリの開発リーダー（そもそも一人しかいない）",
     skills: [
       "JavaScript",
       "TypeScript",
