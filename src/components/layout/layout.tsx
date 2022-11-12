@@ -9,7 +9,6 @@ import Sidebar from "../global/sidebar";
 import styles from "../../styles/components/Layout.module.scss";
 import { initialTheme } from "../../lib/dom/themeControl";
 import Vars from "../../env/vars";
-import Config from "../../env/config";
 import { useRouter } from "next/router";
 
 const Layout: NextPage<{
@@ -40,17 +39,43 @@ const Layout: NextPage<{
   });
   const router = useRouter();
   const pagePath = router.basePath;
-  const pageURL = `${Config.siteHost}${pagePath}`;
-  const title = home ? Vars.siteTitle + " | " + Vars.defaultDescription : pageTitle + " | " + Vars.siteTitle;
-  let ogImageURLTemp: string = "";
-  if (ogCustomImageParam) {
-    ogImageURLTemp = Config.siteHost + "/api/ogp/" + encodeURI(ogCustomImageParam) + "?theme=" + encodeURI(ogTheme);
-  } else if (ogCustomImageURL) {
-    ogImageURLTemp = ogCustomImageURL;
-  } else {
-    ogImageURLTemp = Config.siteHost + "/api/ogp/" + encodeURI(pageTitle || "ウェブアプリ集") + "?theme=" + encodeURI(ogTheme);
-  }
-  const ogImageURL = ogImageURLTemp;
+  const title = home
+    ? Vars.siteTitle + " | " + Vars.defaultDescription
+    : pageTitle + " | " + Vars.siteTitle;
+
+  useEffect(() => {
+    const headEle = document.head;
+    const siteHost = location.protocol + "//" + location.host;
+    const pageURL = location.href;
+    let ogImageURLTemp;
+    console.log(siteHost);
+    console.log(location.href);
+    if (ogCustomImageParam) {
+      ogImageURLTemp =
+        siteHost +
+        "/api/ogp/" +
+        encodeURI(ogCustomImageParam) +
+        "?theme=" +
+        encodeURI(ogTheme);
+    } else if (ogCustomImageURL) {
+      ogImageURLTemp = ogCustomImageURL;
+    } else {
+      ogImageURLTemp =
+        siteHost +
+        "/api/ogp/" +
+        encodeURI(pageTitle || "ウェブアプリ集") +
+        "?theme=" +
+        encodeURI(ogTheme);
+    }
+    const ogImageEle = document.createElement("meta");
+    ogImageEle.setAttribute("property", "og:image");
+    ogImageEle.setAttribute("contant", ogImageURLTemp);
+    headEle.appendChild(ogImageEle);
+    const pageURLEle = document.createElement("meta");
+    pageURLEle.setAttribute("property", "og:url");
+    pageURLEle.setAttribute("content", pageURL);
+    headEle.appendChild(pageURLEle);
+  }, [0]);
 
   return (
     <>
@@ -66,12 +91,12 @@ const Layout: NextPage<{
             content="width=device-width,initial-scale=1.0"
           />
           <meta name="description" content={description} />
-          <meta property="og:url" content={pageURL} />
+          {/* <meta property="og:url" content={pageURL} /> */}
+          {/* <meta property="og:image" content={ogImageURL} /> */}
           <meta property="og:title" content={title} />
           <meta property="og:site_name" content={Vars.siteTitle} />
           <meta property="og:description" content={pageTitle} />
           <meta property="og:type" content="website" />
-          <meta property="og:image" content={ogImageURL} />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
           <meta property="og:image:alt" content={title} />

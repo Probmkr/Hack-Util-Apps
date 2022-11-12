@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from "../../styles/components/Sidebar.module.scss";
 import Vars from "../../env/vars";
 import { useRouter } from "next/router";
-const staticPagesData: object = Vars.sidebarContents.StaticPages;
+const staticPagesData = Vars.sidebarContents.StaticPages;
 
 const SidebarContents = () => {
   return (
@@ -15,6 +15,7 @@ const SidebarContents = () => {
   );
 }
 
+// 後で Hack Util Apps を Vars から参照するように変更する。
 function SidebarLogo() {
   return (
     <div className={styles.sidebarLogo}>
