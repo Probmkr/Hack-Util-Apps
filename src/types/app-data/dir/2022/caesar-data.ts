@@ -1,4 +1,4 @@
-import { MyAppData } from "../../../../types/app-data/app-data.d";
+import { MyAppData } from "../../app-data.d";
 
 const AppData: MyAppData = {
   app_name_ja: "シーザー暗号解読機",

@@ -43,12 +43,13 @@ export default async function handler(
   const errorMessage = "SQLError";
   await connection.connect();
   try {
-    const [results, fields] = await connection.query(
+    await connection.query(
       "insert into contacts (name, email, category_id, subject, message, ip) values (?, ?, ?, ?, ?, ?)",
       [body.name, body.email, body.category, body.subject, body.message, ip]
     );
     res.status(200).json({ message: sentMessage });
   } catch (e) {
+    console.warn("SQL Error:", e.message);
     if (Config.developError) {
       return res.status(500).json({ error: e.message });
     } else {

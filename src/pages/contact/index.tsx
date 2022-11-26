@@ -8,7 +8,7 @@ import hotkeys from "hotkeys-js";
 import { useEffect } from "react";
 import { GetServerSideProps, NextPage } from "next";
 import mysql from "mysql2/promise";
-import ContactCategory from "./contactCategory.d";
+import ContactCategory from "../../types/contact/contactCategory.d";
 
 // export default function ContactPage()
 const ContactPage: NextPage<{
@@ -193,7 +193,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     connection.end();
   }
   if (!error) {
-    console.log(categories[0].id);
+    // console.log(categories[0].id);
     return {
       props: {
         categories,
