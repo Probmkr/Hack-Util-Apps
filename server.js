@@ -4,6 +4,7 @@ const https = require("https");
 const fs = require("fs");
 require("dotenv").config();
 
+// env about server
 const envHTTPS = process.env.HTTPS === "true";
 const isProduction = process.env.NODE_ENV === "production";
 const DevHTTPPort = parseInt(process.env.DEV_HTTP_PORT, 10) || 3001;
@@ -16,11 +17,56 @@ const customPort = parseInt(process.env.PORT, 10);
 const port = customPort || (envHTTPS && HTTPSPort) || HTTPPort;
 const host = "0.0.0.0";
 
+// env about config
+const CreateConfig = process.env.AUTO_CREATE_CONFIG;
+if (CreateConfig) {
+  (async () => {
+    const SQLHost = process.env.MYSQL_HOST;
+    const SQLUser = process.env.MYSQL_USER;
+    const SQLPass = process.env.MYSQL_PASS;
+    const SQLDB = process.env.MYSQL_DB;
+    const DevSQLHost = process.env.DEV_MYSQL_HOST;
+    const DevSQLUser = process.env.DEV_MYSQL_USER;
+    const DevSQLPass = process.env.DEV_MYSQL_PASS;
+    const DevSQLDB = process.env.DEV_MYSQL_DB;
+    const UseDevelop = process.env.USE_DEVELOP;
+    const DevelopError = process.env.DEVELOP_SHOW_ERROR;
+
+    const configText = `\
+import { MyConfig } from './config.d';
+
+const Config: MyConfig = {
+
+  mysqlConnect: {
+    host: "${SQLHost}",
+    user: "${SQLUser}",
+    password: "${SQLPass}",
+    database: "${SQLDB}",
+  },
+  mysqlDevConnect: {
+    host: "${DevSQLHost}",
+    user: "${DevSQLUser}",
+    password: "${DevSQLPass}",
+    database: "${DevSQLDB}",
+  },
+  develop: ${Boolean(UseDevelop)},
+  developError: ${Boolean(DevelopError)},
+};
+
+export default Config;
+`;
+    fs.writeFileSync("src/env/config.tsx", configText, "utf-8")
+    console.log("Config file has been written.")
+  })();
+}
+
+// setup Next.js app
 const app = next({
   dev: !isProduction,
 });
 const nextHandler = app.getRequestHandler();
 
+// start server
 (async () => {
   await app.prepare();
   const expressApp = express();

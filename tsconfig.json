@@ -26,6 +26,8 @@
     "public/script/contact/script.js", "script/register-apps.js",
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "temp",
+    "tmp"
   ],
 }

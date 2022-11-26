@@ -7,7 +7,7 @@
 // Config オブジェクトの型定義
 export interface MyConfig {
 
-  certDir: string;
+  certDir?: string;
   mysqlConnect: {
     host: string;
     user: string;
