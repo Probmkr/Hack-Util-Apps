@@ -37,10 +37,10 @@ git clone https://github.com/Probmkr/test_next_project.git
 cd Hack-Util-Apps
 ```
 
-必要なパッケージをインストールします。（`yarn` を採用しておりますので、 `npm` は使わないでください。）
+必要なパッケージをインストールします。
 
 ```shell
-yarn install
+npm ci
 ```
 
 ### ステップ２（設定ファイル）
@@ -85,7 +85,7 @@ cp .env.sample .env
 
 データベースの初期設定関連の SQL 文は全て `sql/` ディレクトリにあります。
 
-コマンドラインで `sql/combine.sh` または `sql/dev_combine.sh` を実行すれば最新の `all.sql` または `dev_all.sql` が生成されます。  
+コマンドラインで `sql/combine.sh` または `sql/dev_combine.sh` を実行すれば最新の `all.sql` または `dev_all.sql` が生成されます。
 （普通なら二つとも最新のはずですが）
 
 この二つは本番環境と開発環境とで使い分けてください。
