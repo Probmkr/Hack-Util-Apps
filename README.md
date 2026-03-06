@@ -37,6 +37,26 @@ git clone https://github.com/Probmkr/test_next_project.git
 cd Hack-Util-Apps
 ```
 
+#### Node.js のバージョン管理（asdf）
+
+このプロジェクトは [asdf](https://asdf-vm.com/) でランタイムのバージョンを管理しています。
+`.tool-versions` に使用する Node.js のバージョンが記載されています。
+
+asdf と nodejs プラグインを事前にインストールしてください。
+
+```shell
+# asdf のインストール（Homebrew の場合）
+brew install asdf
+
+# nodejs プラグインの追加
+asdf plugin add nodejs
+
+# .tool-versions に記載されたバージョンをインストール
+asdf install
+```
+
+#### パッケージのインストール
+
 必要なパッケージをインストールします。
 
 ```shell
