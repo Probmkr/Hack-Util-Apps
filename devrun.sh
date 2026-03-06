@@ -1,6 +1,6 @@
 #!/bin/bash
 
-yarn install
+npm ci
 ./appdata.sh
 screen -ls dev > /dev/null
 if [ $? == 0 ]; then

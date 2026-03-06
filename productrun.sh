@@ -6,8 +6,8 @@ if [ $1 == 'onlykill' ]; then
     exit 0
 fi
 
-yarn install
-yarn build
+npm ci
+npm run build
 if [ $? != "0" ]; then
     exit 1
 fi
@@ -20,7 +20,7 @@ if [ $? == "0" ]; then
     screen -S product -X quit
 fi
 
-screen -UAmdS product yarn ${1:-start:https}
+screen -UAmdS product npm run ${1:-start:https}
 screen -ls
 
 read -p "do you want to attach? (y:any): " attach
